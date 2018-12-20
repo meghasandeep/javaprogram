@@ -292,22 +292,73 @@ public  void displayarray(E[][]garray,int m,int n)
      }
 }
 
+
+//////////////////////////////////////////////////
+public void Distance()
+{
+	Scanner N=new Scanner(System.in);
+	System.out.println("enter the value of x  ");
+	int x =N.nextInt();
+	System.out.println("enter the value of y ");
+	int y=N.nextInt();
+	double result;
+	result=Math.sqrt(x*x+y*y);
+	System.out.println("result is"+result);
+	
 }
 
 
 
+///////////////////////////////
+public void Quadratic(double a,double b,double c) {
+	
+	double d=Math.sqrt(b*b-4*a*c);
+	double root1=(-b+(d)/(2*a*b));
+	double root2=(-b-(d)/(2*a*b));
+	System.out.println(root1);
+	System.out.println(root2);
+	
+
+	
+}
 
 
 
+////////////////////////////////////
 
 
+	
+	long starttime=0;
+	long endtime=0;
+	long elaspedtime=0;
+	
+	
+	   public void start()
+	   {
+		 starttime= System.currentTimeMillis();
+	
+		System.out.println("Start time "+starttime);
+	   }
+	   public void end()
+	   {
+     endtime= System.currentTimeMillis();
+	 System.out.println("end time "+endtime);
+	   }
+	public void elapse() {
+		elaspedtime=endtime-starttime;
+		System.out.println(elaspedtime);
+	}
 
 
+public void WindChill(double t,double v)
+{
+	double w = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v, 0.16);
+	System.out.println("The value of W is   " +w);
+	
+}
 
 
-
-
-
+}
 
 
 
