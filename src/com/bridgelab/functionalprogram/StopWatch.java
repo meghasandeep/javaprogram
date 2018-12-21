@@ -9,7 +9,7 @@ public class StopWatch {
 		FunctionalUtility f=new FunctionalUtility();
 		Scanner S=new Scanner(System.in);
 		System.out.println("enter 1 to start");
-		long st=S.nextLong();
+		//long st=S.nextLong();
 		f.start();
 		System.out.println("enter 2 to end ");
 		long end=S.nextLong();

@@ -10,5 +10,9 @@ public class Permutation {
 	System.out.println("enter the string");
 	String ip =S.nextLine();
 
+	
+	System.out.println("enter the index");
+	int Index =S.nextInt();
+
 }
 }

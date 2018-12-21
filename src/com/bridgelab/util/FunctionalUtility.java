@@ -337,7 +337,7 @@ public void Quadratic(double a,double b,double c) {
 	   {
 		 starttime= System.currentTimeMillis();
 	
-		System.out.println("Start time "+starttime);
+		 System.out.println("Start time "+starttime);
 	   }
 	   public void end()
 	   {
@@ -364,6 +364,13 @@ public void  Permutations()
 {
 	class Permutations
 	{
+		private  void swap(char[] ip , int i, int j)
+		{
+			char temp = ip[i];
+			ip[i] = ip[j];
+			ip[j] = temp;
+			System.out.println((ip));
+		}
 	
 	private  void permutations(char[] ip, int Index)
 	{
@@ -379,13 +386,8 @@ public void  Permutations()
 			swap(ip, Index, i);
 		
 	}
-	}
-	public  void swap(char[] ip , int i, int j)
-	{
-		char temp = ip[i];
-		ip[i] = ip[j];
-		ip[j] = temp;
-		System.out.println(ip);
+	
+	
 	}
 }
 }
