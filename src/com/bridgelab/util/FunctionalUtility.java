@@ -253,11 +253,11 @@ public void Triplet(int[] arr,int n)
 {
 		
 	boolean flag =false;
-	for(int i=0;i<=n-2;i++)
+	for(int i=0;i<n-2;i++)
 	{
-		for(int j=i+1;j<=n-1;j++)
+		for(int j=i+1;j<n-1;j++)
 		{
-			for(int k=j+1;k<=n;k++)
+			for(int k=j+1;k<n;k++)
 			{
 				if(arr[i]+arr[j]+arr[k]==0)
 				{
@@ -358,11 +358,40 @@ public void WindChill(double t,double v)
 }
 
 
+
+////////////////////////////////////////
+public void  Permutations()
+{
+	class Permutations
+	{
+	
+	private  void permutations(char[] ip, int Index)
+	{
+		if (Index == ip.length - 1) {
+			System.out.println(ip);
+		}
+
+		for (int i = Index; i < ip.length; i++)
+		{
+			
+			swap(ip, Index, i);
+			permutations(ip, Index + 1);
+			swap(ip, Index, i);
+		
+	}
+	}
+	public  void swap(char[] ip , int i, int j)
+	{
+		char temp = ip[i];
+		ip[i] = ip[j];
+		ip[j] = temp;
+		System.out.println(ip);
+	}
+}
 }
 
 
-
-
+}
 
 
 
