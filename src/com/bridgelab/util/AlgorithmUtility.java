@@ -81,7 +81,7 @@ public class AlgorithmUtility {
 
 				}
 			}
-			
+
 			if(flag==1)
 			{
 				num=i;
@@ -91,11 +91,11 @@ public class AlgorithmUtility {
 					x=x*10+r;
 					num=num/10;
 				}
-			
-		
-			if(num==x)	
-				System.out.println(i);
-		}
+
+
+				if(num==x)	
+					System.out.println(i);
+			}
 
 		}
 
@@ -104,60 +104,175 @@ public class AlgorithmUtility {
 
 
 
-//////////////////////////////
-public void PredictDate(int D,int M,int Y) {
-	 if ((D< 1 || D > 31)&&(M<1|| M>12) &&(Y < -10000 || Y > 10000)) 
-	 {
-         System.out.println("Months are between 1 and 12");
-         int Y0 = Y - (14 - M) / 12;
-         int X = Y0 + Y0/4 - Y0/100 +Y0/400;
-         int M0 = M + 12 * ((14 - M) / 12) - 2;
-         int D0 = (D + X + 31 * M0 / 12) % 7;  
-         
-         String day;
-       for(int i=0;i<=D0;i++)
-        {
-        	switch(i) {
-        	case 0: System.out.println("day = Monday ");
-            break; 
-        	case 1:  System.out.println("day = Tuesday "); 
-            break; 
-        	case 2:  System.out.println("day = Wednseday "); 
-            break; 
-        	case 3: System.out.println("day = Thursday ");
-            break; 
-        	case 4: System.out.println("day = Friday ");
-            break; 
-        	case 5:System.out.println("day = Saturday ");
-            break; 
-        	case 6:System.out.println("day = Sunday ");
-            break; 
-        	
-        }
-    
+	//////////////////////////////
+	public void PredictDate(int D,int M,int Y) {
+		if ((D< 1 || D > 31)&&(M<1|| M>12)&&(Y>0))
+		{
+			int Y0 = Y - (14 - M) / 12;
+			int X = Y0 + Y0/4 - Y0/100 +Y0/400;
+			int M0 = M + 12 * ((14 - M) / 12) - 2;
+			int D0 = (D + X + 31 * M0 / 12) % 7;  
+
+			//String day;
+			for(int i=0;i<D0;i++)
+			{
+				switch(i) {
+				case 0: System.out.println("day = Monday ");
+				break; 
+				case 1:  System.out.println("day = Tuesday "); 
+				break; 
+				case 2:  System.out.println("day = Wednseday "); 
+				break; 
+				case 3: System.out.println("day = Thursday ");
+				break; 
+				case 4: System.out.println("day = Friday ");
+				break; 
+				case 5:System.out.println("day = Saturday ");
+				break; 
+				case 6:System.out.println("day = Sunday ");
+				break; 
+				default:System.out.println("inalid input");
+
+
+				}
+
+
+			}
+
+		}
+
+	}
+
+	//////////////////////////////////////////////////////
+	public void Temparature(double C)
+	{
+		double F= ((C *9/5) + 32) ;
+		System.out.println(F);
+
+
+	}
+
+	//////////////////////////////////////////////////////
+	public void MonthlyPayment(double P,double R,double Y) 
+	{
+		double r=R/(12*100);
+		double n=12*Y;
+
+		double c=Math.pow((1+r),-n);
+		double payment=((P*r)/1-c);
+		System.out.println(payment);
+	}
+
+	///////////////////////////////////////////////
+	public void Sqrt(double c) {
+
+		double t=c;
+		double epsilon= 1.0e-15; 
+
+		while(Math.abs(t - c/t) > epsilon*t ) {
+			t=((c/t)+t)/2;
+		}
+			System.out.println("the square root of c is"+t);
+
+		
+	}
+
+
+
+
+
+
+	//////////////////////////////////////////////////
+	public void ToBinary(int n) {
+		int i=0;
+		int binary[]=new int[100];
+		while(n>0)
+		{
+			binary[i]=n%2;
+			n=n/2;
+			i++;
+		}
+		for(int j=i-1;j>=0;j--)
+		{
+			System.out.println(binary[j]);
+
+		}
+	}
+
+
+
+
+	////////////////////////////////////////////////
+	public void BinarySearch(int[] a,int key)
+	{
+		int first=0;
+		int last=a.length;		
+		int mid=0;
+
+
+		while(first<=last)
+		   {
+			mid=(first+last)/2;
+
+			if(a[mid]==key)
+			{
+				System.out.println(mid);
+				
+			}
+			 if(a[mid]<key)
+			{
+
+				first=mid+1;
+
+			}	
+			 
+			else 
+			{
+				last=mid-1;
+
+
+			}
+		}
+
+	}
+
+
+
+public void InsertionSort(int[] a,int n) {
 	
-	 }
+	int i=0;
+	int key;
+	for (i=0;i<n;i++)
+	{
+		key=a[i];
+		int j=i-1;
+		while(j>=0 &&(a[j]>key))
+		{
+			a[j+1]=a[j];
+			j--;
+	}
+	a[j+1]=key;
+	for (i=0;i<n;i++) {
 
+	System.out.println(a[j]);
+
+	
+	}
 }
 
-}
-
-//////////////////////////////////////////////////////
-public void Temparature(double C)
-{
-	double F= ((C *9/5) + 32) ;
-	System.out.println(F);
-
+//public void WordBinary() {
 	
 }
 
-//////////////////////////////////////////////////////
-public void MonthlyPayment(double P,double R,int Y) 
-{
-	double r=R/(12*100);
-	double n=12*Y;
-	
-	 double c=Math.pow((1+r),-n);
-	double payment=((P*r)/1-c);
+
 }
-}
+
+
+
+
+
+
+
+
+
+

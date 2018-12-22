@@ -287,8 +287,9 @@ public  void displayarray(E[][]garray,int m,int n)
      {
    	    for(int j=0;j<n;j++)
    	    {
-   		System.out.println(garray[i][j] +" ");
+   		System.out.print(garray[i][j] +" ");
    	  }
+   	    System.out.println();
      }
 }
 
