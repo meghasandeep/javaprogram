@@ -12,7 +12,7 @@ public class PredictDate {
 	    int M=S.nextInt();
 	    System.out.println("enter the Year");
 	    int Y=S.nextInt();
-	    f.PredictDate(D,M,Y);
+	    f.predictDate(D,M,Y);
 	
 
 }

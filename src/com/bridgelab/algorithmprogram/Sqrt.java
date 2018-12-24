@@ -11,7 +11,7 @@ public class Sqrt {
 		System.out.println("enter the Value of c");
 		double c =S.nextDouble();
 		AlgorithmUtility f=new AlgorithmUtility();
-	    f.Sqrt(c);
+	    f.sqrt(c);
 		 
 
 

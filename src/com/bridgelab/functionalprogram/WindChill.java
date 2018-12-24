@@ -12,6 +12,6 @@ public class WindChill {
 		double t=S.nextDouble();
 		System.out.println("enter the value of velocity ");
 		double v=S.nextDouble();
-        f.WindChill(t,v);
+        f.windChill(t,v);
 }
 }

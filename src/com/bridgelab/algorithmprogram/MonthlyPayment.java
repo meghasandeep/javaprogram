@@ -16,7 +16,7 @@ public class MonthlyPayment {
 		
 
 		AlgorithmUtility f=new AlgorithmUtility();
-	    f.MonthlyPayment(P,R,Y);
+	    f.monthlyPayment(P,R,Y);
 		 
 	
 	}

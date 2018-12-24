@@ -5,6 +5,6 @@ public class Power {
 	public static void main(String[] args)
 	{
 	 FunctionalUtility f=new FunctionalUtility();
-	f.Power();
+	f.power();
 }
 }

@@ -17,7 +17,7 @@ public class Triplet {
           }
 			
 	     
-		f1.Triplet(arr,n);
+		f1.triplet(arr,n);
 		
 	}
 

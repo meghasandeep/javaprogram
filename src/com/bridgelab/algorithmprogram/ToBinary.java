@@ -9,7 +9,7 @@ public class ToBinary {
 		System.out.println("enter the Value of n");
 		int n =S.nextInt();
 		AlgorithmUtility f=new AlgorithmUtility();
-	    f.ToBinary(n);
+	    f.toBinary(n);
 		 
 		
 

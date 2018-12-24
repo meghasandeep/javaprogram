@@ -7,6 +7,6 @@ public class Temparature {
 		Scanner S=new Scanner(System.in);
 		System.out.println("enter the temparature in celcius");
 	    double C=S.nextDouble();
-	    f.Temparature(C);
+	    f.temparature(C);
 	}
 }

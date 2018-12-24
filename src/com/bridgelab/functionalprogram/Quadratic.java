@@ -15,7 +15,7 @@ public class Quadratic {
 		System.out.println("enter the value of c  ");
 		double c =N.nextDouble();
 		 FunctionalUtility f1=new FunctionalUtility();
-			f1.Quadratic(a,b,c);
+			f1.quadratic(a,b,c);
 	}
 
 }

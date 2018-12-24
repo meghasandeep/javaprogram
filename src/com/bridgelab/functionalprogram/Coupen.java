@@ -10,7 +10,7 @@ public class Coupen {
           int num=S.nextInt();		
 				
 	     FunctionalUtility f1=new FunctionalUtility();
-		f1.Coupen(num);
+		f1.coupen(num);
 		
 	}
 

@@ -1,7 +1,11 @@
 package com.bridgelab.algorithmprogram;
-import com.bridgelab.util.AlgorithmUtility;
+
 import java.util.Scanner;
-public class InsertionSort {
+
+import com.bridgelab.util.AlgorithmUtility;
+
+public class BubbleSort {
+
 	public static void main(String[] args) {
 		AlgorithmUtility f=new AlgorithmUtility();
 		Scanner S=new Scanner(System.in);
@@ -13,6 +17,7 @@ public class InsertionSort {
 		{
 			 array[i] =S.nextInt();
 		}
-		f.insertionSort(array,n);
+		f.bubbleSort(array);
 	}
+
 }

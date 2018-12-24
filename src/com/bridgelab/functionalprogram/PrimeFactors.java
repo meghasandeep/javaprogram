@@ -4,7 +4,7 @@ public class PrimeFactors {
 	public static void main(String[] args)
 	{
  FunctionalUtility f=new FunctionalUtility();
- f.PrimeFactor();
+ f.primeFactor();
 	}
 
 }

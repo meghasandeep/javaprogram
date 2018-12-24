@@ -12,8 +12,8 @@ public class Anagram {
 		String str2 =S.nextLine();
 		
 
-		AlgorithmUtility f=new AlgorithmUtility();
-	    f.Anagram(str1,str2);
+		//AlgorithmUtility f=new AlgorithmUtility();
+	    //f.anagram(str1,str2);
 		 
 		
 }

@@ -5,7 +5,7 @@ public class Distance {
 	{
 
 		FunctionalUtility f1=new FunctionalUtility();
-	      f1.Distance();
+	      f1.distance();
 	
 	}
 

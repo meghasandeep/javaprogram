@@ -12,7 +12,7 @@ public class ReplaceString
 		System.out.println("enter the username");
 		String str1="hello &&&username&& how are you";
 	     FunctionalUtility f1=new FunctionalUtility();
-		f1.ReplaceString(str1);
+		f1.replaceString(str1);
 		
 	}
 

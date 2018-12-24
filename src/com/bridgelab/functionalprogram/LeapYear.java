@@ -8,6 +8,6 @@ public class LeapYear
 	public static void main(String[] args)
 	{
  FunctionalUtility lp=new FunctionalUtility();
- lp.LeapYear();
+ lp.leapYear();
 }
 }

@@ -9,7 +9,7 @@ public class Gambler {
 	{
 						
 	     FunctionalUtility f1=new FunctionalUtility();
-		   f1.Gambler();
+		   f1.gambler();
 		
 	}
 }

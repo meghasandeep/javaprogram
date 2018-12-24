@@ -10,7 +10,7 @@ public class FunctionalUtility <E>{
 
 
 
-	public void ReplaceString( String str1)
+	public void replaceString( String str1)
 	{
 		Scanner S=new Scanner(System.in);
 
@@ -32,7 +32,7 @@ public class FunctionalUtility <E>{
 
 
 
-	public void FlipCoin(int count)
+	public void flipCoin(int count)
 	{
 		int head=0;
 		int tail=0;
@@ -67,7 +67,7 @@ public class FunctionalUtility <E>{
 
 
 
-	public void LeapYear()
+	public void leapYear()
 	{
 
 		Scanner S=new Scanner(System.in);
@@ -100,7 +100,7 @@ public class FunctionalUtility <E>{
 
 
 
-	public void Power()
+	public void power()
 	{
 		Scanner N=new Scanner(System.in);
 		System.out.println("enter the number ");
@@ -125,7 +125,7 @@ public class FunctionalUtility <E>{
 	}
 
 
-	public void Harmonic()
+	public void harmonic()
 	{
 		Scanner N=new Scanner(System.in);
 		System.out.println("enter the number  ");
@@ -142,7 +142,7 @@ public class FunctionalUtility <E>{
 	}
 
 
-	public void PrimeFactor()
+	public void primeFactor()
 	{
 		Scanner N=new Scanner(System.in);
 		System.out.println("enter the number  ");
@@ -175,7 +175,7 @@ public class FunctionalUtility <E>{
 
 
 
-	public void Gambler()
+	public void gambler()
 	{
 		Scanner N=new Scanner(System.in);
 		System.out.println("enter the goal  ");
@@ -221,7 +221,7 @@ public class FunctionalUtility <E>{
 		System.out.println(loss*100/n);
 	}
 
-	public void Coupen(int n)
+	public void coupen(int n)
 	{
 		boolean[] coup=new boolean[n];
 		int count=0;
@@ -249,7 +249,7 @@ public class FunctionalUtility <E>{
 
 /////////////////////////////////////////////
 
-public void Triplet(int[] arr,int n)
+public void triplet(int[] arr,int n)
 {
 		
 	boolean flag =false;
@@ -281,7 +281,7 @@ if(flag==false)
 
 ///////////////////////////////////////////
 
-public  void displayarray(E[][]garray,int m,int n)
+public  void displayArray(E[][]garray,int m,int n)
 {
 	 for(int i=0;i< m;i++)
      {
@@ -295,7 +295,7 @@ public  void displayarray(E[][]garray,int m,int n)
 
 
 //////////////////////////////////////////////////
-public void Distance()
+public void distance()
 {
 	Scanner N=new Scanner(System.in);
 	System.out.println("enter the value of x  ");
@@ -311,7 +311,7 @@ public void Distance()
 
 
 ///////////////////////////////
-public void Quadratic(double a,double b,double c) {
+public void quadratic(double a,double b,double c) {
 	
 	double d=Math.sqrt(b*b-4*a*c);
 	double root1=(-b+(d)/(2*a*b));
@@ -351,7 +351,7 @@ public void Quadratic(double a,double b,double c) {
 	}
 
 
-public void WindChill(double t,double v)
+public void windChill(double t,double v)
 {
 	double w = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v, 0.16);
 	System.out.println("The value of W is   " +w);
@@ -361,7 +361,7 @@ public void WindChill(double t,double v)
 
 
 ////////////////////////////////////////
-public void  Permutations()
+public void  permutations()
 {
 	class Permutations
 	{

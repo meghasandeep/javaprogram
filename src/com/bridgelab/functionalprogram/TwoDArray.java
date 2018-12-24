@@ -24,7 +24,7 @@ public class TwoDArray {
         		  array[i][j]=S.nextInt();
         	  }
           }
-        		f1.displayarray(array,m,n);
+        		f1.displayArray(array,m,n);
         		break;
         		  
         		  
@@ -35,7 +35,7 @@ public class TwoDArray {
         		  darray[i][j]=S.nextDouble();
         	  }
           }
-        		f1.displayarray(darray,m,n);
+        		f1.displayArray(darray,m,n);
         		break;
         		
           case 3:Boolean[][] barray=new Boolean[m][n];
@@ -46,7 +46,7 @@ public class TwoDArray {
         		  barray[i][j]=S.nextBoolean();
         	  }
               }
-        		f1.displayarray(barray,m,n);
+        		f1.displayArray(barray,m,n);
         		break;
         		default: System.out.println("Select among the choice");
         		break;

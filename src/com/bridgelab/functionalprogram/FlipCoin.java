@@ -12,7 +12,7 @@ public class FlipCoin {
 		
 				
 	     FunctionalUtility f1=new FunctionalUtility();
-		f1.FlipCoin( count);
+		f1.flipCoin( count);
 		
 
 }

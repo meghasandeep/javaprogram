@@ -4,7 +4,7 @@ public class Harmonic {
 	public static void main(String[] args)
 	{
 	FunctionalUtility f=new FunctionalUtility();
-	f.Harmonic();
+	f.harmonic();
 
 
 }

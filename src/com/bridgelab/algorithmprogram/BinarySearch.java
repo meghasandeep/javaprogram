@@ -17,6 +17,6 @@ public class BinarySearch {
 		{
 		 a[i] =S.nextInt();
 		}
-	    f.BinarySearch(a,key);
+	    f.binarySearch(a,key);
 	} 
 }
