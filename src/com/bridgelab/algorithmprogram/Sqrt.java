@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin Sqrt.java
+ *  Execution:    java -cp bin com.bridgelabz.util.Sqrt n
+ *  
+ *  Purpose: finding the square root of the given value
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.algorithmprogram;
 import java.util.Scanner;
 

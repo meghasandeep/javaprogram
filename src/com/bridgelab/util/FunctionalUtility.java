@@ -100,11 +100,9 @@ public class FunctionalUtility <E>{
 
 
 
-	public void power()
+	public  void power(int n)
 	{
-		Scanner N=new Scanner(System.in);
-		System.out.println("enter the number ");
-		int n=N.nextInt();
+		
 		int count=0;
 		if(n>=0 && n<31)
 		{
@@ -281,7 +279,7 @@ if(flag==false)
 
 ///////////////////////////////////////////
 
-public  void displayArray(E[][]garray,int m,int n)
+public   void displayArray(E[][]garray,int m,int n)
 {
 	 for(int i=0;i< m;i++)
      {
@@ -329,25 +327,25 @@ public void quadratic(double a,double b,double c) {
 
 
 	
-	long starttime=0;
-	long endtime=0;
-	long elaspedtime=0;
 	
+	static long starttime,endtime;
 	
-	   public void start()
+	   public static long start()
 	   {
-		 starttime= System.currentTimeMillis();
-	
-		 System.out.println("Start time "+starttime);
+		  starttime= System.currentTimeMillis();
+		 
+		 return(starttime);
 	   }
-	   public void end()
+	   public static long end()
 	   {
-     endtime= System.currentTimeMillis();
-	 System.out.println("end time "+endtime);
+        endtime= System.currentTimeMillis();
+	   return(endtime);
 	   }
-	public void elapse() {
-		elaspedtime=endtime-starttime;
-		System.out.println(elaspedtime);
+	
+	   public static long elapse() {
+	
+	long elaspedtime= endtime-  starttime ;
+		return(elaspedtime);
 	}
 
 

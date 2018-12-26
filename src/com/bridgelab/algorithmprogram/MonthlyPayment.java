@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin MonthlyPayment.java
+ *  Execution:    java -cp bin com.bridgelabz.util.MonthlyPayment n
+ *  
+ *  Purpose: Calculating the monthly payment
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.algorithmprogram;
 import java.util.Scanner;
 

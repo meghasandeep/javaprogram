@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin Quadratic.java
+ *  Execution:    java -cp bin com.bridgelabz.util.Quadratic n
+ *  
+ *  Purpose: finding the Quadratic roots for given value
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.functionalprogram;
 
 import java.util.Scanner;

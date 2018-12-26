@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin VendingMachine.java
+ *  Execution:    java -cp bin com.bridgelabz.util.VendingMachine n
+ *  
+ *  Purpose: printing the number of notes return from machine
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.algorithmprogram;
 
 import java.util.Scanner;

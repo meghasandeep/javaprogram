@@ -3,26 +3,35 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class AlgorithmUtility {
-	//anagram
-	public void anagram(String str1,String str2)
-	{
+
+	public static void anagram(String str1,String str2)
+	{   
+		boolean key=true;
+
 		if(str1.length()!=str2.length())
 		{
-			System.out.println("str1 and str2 are not anagrams");
+			key=false;
 		}
-		char[] char1 = str1.toLowerCase().toCharArray();
-		char[] char2 = str2.toLowerCase().toCharArray();
+		else {	
 
-		Arrays.sort(char1);
-		Arrays.sort(char2);
-		if(char1==char2)
+			char[] char1 = str1.toLowerCase().toCharArray();
+			char[] char2 = str2.toLowerCase().toCharArray();
+
+			Arrays.sort(char1);
+			Arrays.sort(char2);
+			key= Arrays.equals(char1,char2);
+		}
+
+
+		if(key)
+		{
+
 			System.out.println("str1 and str2 are anagrams");
+		}
 		else
 		{
 			System.out.println("str1 and str2 are not anagrams");
 		}
-
-
 
 	}
 
@@ -37,12 +46,14 @@ public class AlgorithmUtility {
 
 
 
-	////////////////////////////////////////////////
 
-	public void prime()
+
+	//prime number
+
+	public static int prime(int limit)
 	{
 
-		for(int i=1; i < 1000; i++){
+		for(int i=1; i < limit; i++){
 
 			int flag = 1;
 
@@ -63,52 +74,39 @@ public class AlgorithmUtility {
 
 
 		}
+		return i;
 
 
 	}
-	///////////////////////////////
-	public void palindromePrime(int limit)
+	//palindrome 
+	public static int palindrome(int limit)
 	{
-		int r,x=0;
-		for(int i=1; i < limit; i++)
-		{
-
-			int flag = 1;
-
-			for(int j=2; j < i ; j++)
+		int rem;
+		int rev=0;
+			for (int i = 1; i <= limit; i++)
 			{
-
-				if(i % j == 0){
-					flag = 0;
-
-				}
-
-
-				if(flag==1)
+				int num = i;
+				while (num > 0)
 				{
-					int num;
-					num=i;
-					while(num!=0)
-					{
-						r=num%10;
-						x=x*10+r;
-						num=num/10;
-					}
-
-
-
-					if(num==x)	
-						System.out.println(i);
+					rem= num % 10;
+					rev = rev * 10 + rem;
+					num = num / 10;
 				}
-
+				if (rev == i)
+				{
+					System.out.print(i + " ");
+				}
+				rev = 0;
 			}
-
+			return 0;
+			
 		}
 
-	}
 
 
-	//////////////////////////////
+
+
+	///predictdate
 	public void predictDate(int D,int M,int Y) {
 		if ((D< 1 || D > 31)&&(M<1|| M>12)&&(Y>0))
 		{
@@ -187,7 +185,11 @@ public class AlgorithmUtility {
 
 
 	//////////////////////////////////////////////////
-	public void toBinary(int n) {
+	/**
+	 * @param n input number
+	 * @return
+	 */
+	public static int[] toBinary(int n) {
 		int i=0;
 		int binary[]=new int[100];
 		while(n>0)
@@ -196,18 +198,26 @@ public class AlgorithmUtility {
 			n=n/2;
 			i++;
 		}
-		for(int j=i-1;j>=0;j--)
-		{
-			System.out.println(binary[j]);
 
-		}
+		return(binary);
 	}
 
 
 
 
 	////////////////////////////////////////////////
-	public void binarySearch(int[] a,int key)
+	
+	/**
+	 * @param a input array 
+	 * @param key required element
+	 * @return mid value
+	 */
+	/**
+	 * @param a
+	 * @param key
+	 * @return
+	 */
+	public static int binarySearch(int[] a,int key)
 	{
 		int first=0;
 		int last=a.length;		
@@ -220,7 +230,7 @@ public class AlgorithmUtility {
 
 			if(a[mid]==key)
 			{
-				System.out.println( "The key value found at "+mid);
+			return mid;
 
 			}
 			if(a[mid]<key)
@@ -239,33 +249,31 @@ public class AlgorithmUtility {
 
 		}
 
-
+return 0;
 
 	}
 
 
 
-	public void insertionSort(int[] array,int n) {
+	public static void insertion_Sort_String(String[] arr,int n) {
 
 		int i=0;
-		int key;
+		String temp=" ";
 		for (i=1;i<n;i++)
 		{
-			key=array[i];
+			temp=arr[i];
 			int j=i-1;
-			while(j>=0 && (array[j]>key))
+			while((j>=0) && ((arr[j].compareTo(temp))>0))
 			{
-				array[j+1]=array[j];
-				j--;
 
-				array[j+1]=key;
+				{
+					arr[j+1]=arr[j];
+					j--;
+
+					arr[j+1]=temp;
+				}
 			}
-		}
 
-		for(int j=0;j<n;j++) {
-
-			System.out.print( array[j]);
-			System.out.print(" ");
 
 
 		}
@@ -299,7 +307,7 @@ public class AlgorithmUtility {
 				rem = money%notes[i];
 				money =rem;
 				total += count;
-				System.out.println(notes[i]+  "rs Notes are  " +count );
+				return count ;
 			}
 			i++;
 			return calculate(money, notes);
@@ -311,7 +319,7 @@ public class AlgorithmUtility {
 	////////////////////////////////////////////////////////
 
 
-	public void bubbleSort(int[] array) {
+	public static void bubbleSort(int[] array) {
 		int n = array.length;
 		for (int i = 0; i < n-1; i++)
 			for (int j = 0; j < n-i-1; j++)
@@ -327,25 +335,126 @@ public class AlgorithmUtility {
 			System.out.println(array[i]);
 		}
 	}
+
+	////////////////////////////////////////////////////////////
+	public static int swapNibbles(int x)
+	{
+		return ((x & 0x0F) << 4 | (x & 0xF0) >> 4); 	
+
+	}
+
+
+	public static void mergeSort(String array[],int low,int high)
+	{
+		int n=high-low;
+		if(n<=1)
+			return;
+		int mid=low+n/2;
+		mergeSort(array,low,mid);
+		mergeSort(array,mid,high);
+		String[] temp=new String[n];
+		int i=low,j=mid;
+		for(int k=0;k<n;k++)
+		{
+			if(i==mid)
+				temp[k]=array[j++];
+			else if(j==high)
+				temp[k]=array[i++];
+			else if(array[j].compareToIgnoreCase(array[i])<0)
+				temp[k]=array[j++];
+			else
+				temp[k]=array[i++];
+		}
+
+		for(int k=0;k<n;k++)
+		{
+			array[low +k]=temp[k];
+		}
+
+	}
+
+	public static void bubble_Sort_String(String[] array) {
+		int n = array.length;
+		String temp="";
+		for (int i = 0; i < n-1; i++)
+			for (int j = 0; j < n-i-1; j++)
+				if ((array[j]).compareTo(array[j+1])>0)
+				{
+					temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
+
+				}
+		for (int i = 0; i < n; i++)
+		{
+			System.out.println(array[i]);
+		}
+	}
+
+	public static void binary_Search_String(String[] a,String key)
+	{
+		int first=0;
+		int last=a.length;		
+		int mid=0;
+
+
+		if(first<=last)
+		{
+			mid=(first+last)/2;
+
+			if(a[mid].equalsIgnoreCase(key))
+			{
+				System.out.println( "The key value found at "+mid);
+
+
+				if((a[mid]).compareTo((key))>0)
+				{
+
+					first=mid+1;
+
+				}	
+
+				else 
+				{
+					last=mid-1;
+
+
+				}
+
+			}
+
+
+
+		}
+
+	}
+	public static void insertionSort(int[] array3,int n) {
+
+		int i=0;
+
+		for (i=1;i<n;i++)
+		{
+			int temp=array3[i];
+			int j=i-1;
+			while((j>=0) && ((array3[j]>(temp))))
+			{
+
+				{
+					array3[j+1]=array3[j];
+					j--;
+
+					array3[j+1]=temp;
+				}
+			}
+
+
+
+		}
+
+
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

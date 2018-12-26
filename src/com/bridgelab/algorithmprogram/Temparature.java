@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin Temparature.java
+ *  Execution:    java -cp bin com.bridgelabz.util.Temparature n
+ *  
+ *  Purpose: converting temparature from celcius to Fahrenheit
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.algorithmprogram;
 import java.util.Scanner;
 import com.bridgelab.util.AlgorithmUtility;

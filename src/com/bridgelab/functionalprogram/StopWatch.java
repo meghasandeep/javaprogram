@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin StopWatch.java
+ *  Execution:    java -cp bin com.bridgelabz.util.StopWatch n
+ *  
+ *  Purpose: finding the elapsed time between start and end time
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.functionalprogram;
 import java.util.Scanner;
 
@@ -7,15 +18,12 @@ public class StopWatch {
 	public static void main(String[] args)
 	{
 		FunctionalUtility f=new FunctionalUtility();
-		Scanner S=new Scanner(System.in);
-		System.out.println("enter 1 to start");
-		//long st=S.nextLong();
-		f.start();
-		System.out.println("enter 2 to end ");
-		long end=S.nextLong();
-		f.end();
-		System.out.println("enter 3 to find elapsed time ");
-		//long elapse=S.nextLong();
-		f.elapse();
+		
+		long a =f.start();
+		
+		long b=f.end();
+		
+		long c=f.elapse();
+		System.out.println(c+" millisec");
 	}
 }

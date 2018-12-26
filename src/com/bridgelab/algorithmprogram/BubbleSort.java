@@ -1,3 +1,15 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin BubbleSort.java
+ *  Execution:    java -cp bin com.bridgelabz.util.BubbleSort n
+ *  
+ *  Purpose: Searching the integer value by using Binary search
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
+
 package com.bridgelab.algorithmprogram;
 
 import java.util.Scanner;
