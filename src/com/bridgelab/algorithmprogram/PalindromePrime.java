@@ -8,36 +8,20 @@
  *  @version 1.0
  *  @since   24-12-2018
  *
- ******************************************************************************/package com.bridgelab.algorithmprogram;
-import java.util.Scanner;
+ ******************************************************************************/
+package com.bridgelab.algorithmprogram;
 import com.bridgelab.util.AlgorithmUtility;
 
 public class PalindromePrime {
 	public static void main(String[] args) {
-		//AlgorithmUtility f=new AlgorithmUtility();
-	    Scanner S=new Scanner(System.in);
-		System.out.println("enter the limit value");
-		int limit=S.nextInt();
-		int[] c=new int[limit];
-		int i=0;
-		 
-		for(i=1;i<limit;i++)	
-		{
-			c[i]=AlgorithmUtility.prime(limit);
-	      
-		}
-		
-		System.out.println("prime numbers are "+i);
-		 
-	    }
-		//int b=AlgorithmUtility.palindrome(limit);
-//		int[] a=new int[limit];
-//		for(int i=0;i<limit;i++)
-//		{
-//		int b=AlgorithmUtility.palindrome(c);
-//		}
-//       System.out.println("prime palindromes are "+b);
-//	}
-//	
 
-}
+			
+			System.out.println("The Prime Nos between 0 to 1000 which are also the  Pallindrome");
+			AlgorithmUtility.primePallindrome();
+			System.out.println();
+			System.out.println("The Numbers which are Prime, Pallindrome and Anagrams :");
+			AlgorithmUtility.primeAnagrams();
+		}
+
+	}
+

@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin InsertionSort.java
- *  Execution:    java -cp bin com.bridgelabz.util.Insertionsort n
+ *  Execution:    java -cp bin com.bridgelabz.util.AlgorithmUtility n
  *  
  *  Purpose: Searching the string  by using Insertion sort
  *
@@ -11,19 +11,17 @@
  ******************************************************************************/
 package com.bridgelab.algorithmprogram;
 import com.bridgelab.util.AlgorithmUtility;
-import java.util.Scanner;
 public class InsertionSort {
 	public static void main(String[] args) {
 		
-		Scanner S=new Scanner(System.in);
 		System.out.println("enter the number of  elements");
-		int n=S.nextInt();
+		int n=AlgorithmUtility.intValue();
 		 String arr[]=new String[n];
 	        System.out.println("Enter the elements");
 
 	        for( int i=0;i<n;i++)
 	        {   
-	            arr[i]=S.next();
+	            arr[i]=AlgorithmUtility.StringValue();
 	        }
 		
 		 AlgorithmUtility.insertion_Sort_String(arr,n);

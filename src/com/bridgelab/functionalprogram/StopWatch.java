@@ -10,20 +10,20 @@
  *
  ******************************************************************************/
 package com.bridgelab.functionalprogram;
-import java.util.Scanner;
 
 import com.bridgelab.util.FunctionalUtility;
 
 public class StopWatch {
 	public static void main(String[] args)
 	{
-		FunctionalUtility f=new FunctionalUtility();
 		
-		long a =f.start();
+		long a =FunctionalUtility.start();
+		System.out.println(a);
 		
-		long b=f.end();
+		long b=FunctionalUtility.end();
+		System.out.println(b);
 		
-		long c=f.elapse();
+		long c=FunctionalUtility.elapse();
 		System.out.println(c+" millisec");
 	}
 }

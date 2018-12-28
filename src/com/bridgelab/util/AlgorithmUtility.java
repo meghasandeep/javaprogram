@@ -1,22 +1,68 @@
 package com.bridgelab.util;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class AlgorithmUtility {
+static Scanner sc = new Scanner(System.in);
+    
+    public static int intValue()
+    {
+        try
+        {
+            return sc.nextInt();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+        
+        public static double doubleValue()
+        {
+            try
+            {
+                return sc.nextInt();
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+            return 0.0;
+        }
+            
+            public static String StringValue()
+            {
+                try
+                {
+                    return sc.next();
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+   //Program to check whether the given strings are anagrams or not.         
 
+	/**
+	 * @param str1 input string1
+	 * @param str2 input string2
+	 */
 	public static void anagram(String str1,String str2)
 	{   
 		boolean key=true;
-
+         //if lengths are not same they are not anagrams
 		if(str1.length()!=str2.length())
 		{
 			key=false;
 		}
 		else {	
-
+          // convert string to lowercase character array to compare
 			char[] char1 = str1.toLowerCase().toCharArray();
 			char[] char2 = str2.toLowerCase().toCharArray();
-
+         // array sorting
 			Arrays.sort(char1);
 			Arrays.sort(char2);
 			key= Arrays.equals(char1,char2);
@@ -35,21 +81,11 @@ public class AlgorithmUtility {
 
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	//prime number
-
+//Program to print prime number in the given range
+	/**
+	 * @param limit input range till that range we have to find the prime numbers
+	 * @return i
+	 */
 	public static int prime(int limit)
 	{
 
@@ -78,162 +114,339 @@ public class AlgorithmUtility {
 
 
 	}
-	//palindrome 
-	public static int palindrome(int limit)
-	{
-		int rem;
-		int rev=0;
-			for (int i = 1; i <= limit; i++)
-			{
-				int num = i;
-				while (num > 0)
-				{
-					rem= num % 10;
-					rev = rev * 10 + rem;
-					num = num / 10;
-				}
-				if (rev == i)
-				{
-					System.out.print(i + " ");
-				}
-				rev = 0;
-			}
-			return 0;
-			
-		}
-
-
-
-
-
-	///predictdate
-	public void predictDate(int D,int M,int Y) {
-		if ((D< 1 || D > 31)&&(M<1|| M>12)&&(Y>0))
-		{
-			int Y0 = Y - (14 - M) / 12;
-			int X = Y0 + Y0/4 - Y0/100 +Y0/400;
-			int M0 = M + 12 * ((14 - M) / 12) - 2;
-			int D0 = (D + X + 31 * M0 / 12) % 7;  
-
-			//String day;
-			for(int i=0;i<D0;i++)
-			{
-				switch(i) {
-				case 0: System.out.println("day = Monday ");
-				break; 
-				case 1:  System.out.println("day = Tuesday "); 
-				break; 
-				case 2:  System.out.println("day = Wednseday "); 
-				break; 
-				case 3: System.out.println("day = Thursday ");
-				break; 
-				case 4: System.out.println("day = Friday ");
-				break; 
-				case 5:System.out.println("day = Saturday ");
-				break; 
-				case 6:System.out.println("day = Sunday ");
-				break; 
-				default:System.out.println("inalid input");
-
-
-				}
-
-
-			}
-
-		}
-
-	}
-
-	//////////////////////////////////////////////////////
-	public void temparature(double C)
-	{
-		double F= ((C *9/5) + 32) ;
-		System.out.println(F);
-
-
-	}
-
-	//////////////////////////////////////////////////////
-	public void monthlyPayment(double P,double R,double Y) 
-	{
-		double r=R/(12*100);
-		double n=12*Y;
-
-		double c=Math.pow((1+r),-n);
-		double payment=((P*r)/1-c);
-		System.out.println(payment);
-	}
-
-	///////////////////////////////////////////////
-	public void sqrt(double c) {
-
-		double t=c;
-		double epsilon= 1.0e-15; 
-
-		while(Math.abs(t - c/t) > epsilon*t ) {
-			t=((c/t)+t)/2;
-		}
-		System.out.println("the square root of c is"+t);
-
-
-	}
-
-
-
-
-
-
-	//////////////////////////////////////////////////
-	/**
-	 * @param n input number
-	 * @return
-	 */
-	public static int[] toBinary(int n) {
-		int i=0;
-		int binary[]=new int[100];
-		while(n>0)
-		{
-			binary[i]=n%2;
-			n=n/2;
-			i++;
-		}
-
-		return(binary);
-	}
-
-
-
-
-	////////////////////////////////////////////////
+	
+	//Program to search the string using binary search method
+	
 	
 	/**
-	 * @param a input array 
-	 * @param key required element
-	 * @return mid value
+	 * @param str input string
+	 * @param key string which we want to find
+	 * @return mid
 	 */
+	public static int binarySearch(String [] str,String key)
+    {
+        //int n=str.length;
+        int first  = 0;
+        int last   = str.length - 1;
+        int mid = (first + last)/2;
+
+        while( first <= last )
+        {
+            if ( str[mid].compareTo(key)<0 )
+                first = mid + 1;    
+            else if ( str[mid].equalsIgnoreCase(key) )
+            {
+                return mid;
+            }
+            else
+                last = mid - 1;
+
+            mid = (first + last)/2;
+        }
+        return -1;
+
+    }
+
+
+
+
+
+	// program to find the day for the given date,month and year.
 	/**
-	 * @param a
-	 * @param key
-	 * @return
+	 * @param m month
+	 * @param d date
+	 * @param y year
+	 * @return intger do
 	 */
-	public static int binarySearch(int[] a,int key)
+	public static int predictDate(int m,int d, int y){
+
+
+			
+			int y0 = y - (14 - m) / 12;
+			int x = y0 + y0/4 - y0/100 +y0/400;
+			int m0 = m + 12 * ((14 - m) / 12) - 2;
+			int d0 = (d + x + 31 * m0 / 12) % 7;  
+			return d0;
+		}
+			
+//Program to convert temperature from celcius to fahreient
+	
+/**
+ * @param C temperature in celcius
+ */
+public static void temparature(double C)
+{
+	double F= ((C *9/5) + 32) ;
+	System.out.println(F);
+
+
+}
+
+//Program to find the monthly payment 
+
+/**
+ * @param P principle amount
+ * @param R rate of interest
+ * @param Y year
+ */
+public  static void monthlyPayment(int P,double R,int Y) 
+{
+	double r=R/(12*100);
+	double n=12*Y;
+
+	double c=Math.pow((1+r),-n);
+	double payment=((P*r)/1-c);
+	System.out.println(payment);
+}
+
+//Program to find the squareroot
+
+/**
+ * @param c input number
+ */
+public static void sqrt(double c) {
+
+	double t=c;
+	double epsilon= 1.0e-15; 
+
+	while(Math.abs(t - c/t) > epsilon*t ) {
+		t=((c/t)+t)/2;
+	}
+	System.out.println("the square root of c is"+t);
+
+
+}
+//Program to convert decimal to binary value
+/**
+ * @param n input number
+ * @return
+ */
+public static int[] toBinary(int n) {
+	int i=0;
+	int binary[]=new int[100];
+	while(n>0)
 	{
-		int first=0;
-		int last=a.length;		
-		int mid=0;
+		binary[i]=n%2;
+		n=n/2;
+		i++;
+	}
+
+	return(binary);
+}
+//Program to search the number by using binary search
 
 
-		if(first<=last)
+
+/**
+ * @param a array elements
+ * @param key number to be found
+ * @return mid
+ */
+public static int binarySearch(int[] a,int key)
+{
+	int first=0;
+	int last=a.length;		
+	int mid=0;
+
+
+	if(first<=last)
+	{
+		mid=(first+last)/2;
+
+		if(a[mid]==key)
 		{
-			mid=(first+last)/2;
-
-			if(a[mid]==key)
-			{
 			return mid;
 
+		}
+		if(a[mid]<key)
+		{
+
+			first=mid+1;
+
+		}	
+
+		else 
+		{
+			last=mid-1;
+
+
+		}
+
+	}
+
+	return 0;
+
+}
+
+//Program to sort the string using insertion sort 
+
+/**
+ * @param arr input array string
+ * @param n number of input
+ */
+public static void insertion_Sort_String(String[] arr,int n) {
+
+	int i=0;
+	String temp=" ";
+	for (i=1;i<n;i++)
+	{
+		temp=arr[i];
+		int j=i-1;
+		while((j>=0) && ((arr[j].compareTo(temp))>0))
+		{
+
+			{
+				arr[j+1]=arr[j];
+				j--;
+
+				arr[j+1]=temp;
 			}
-			if(a[mid]<key)
+		}
+
+
+
+	}
+
+
+}
+//Program to calcualting the number of notes to be returned.
+
+static int i=0;
+static int total=0;
+static int money;
+public static int calculate(int money,int[]notes)
+{
+	int rem;
+	if(money==0)
+	{
+		return -1 ;
+	}
+	else
+	{
+		if(money>=notes[i])
+		{
+			int count =money/notes[i];
+			rem = money%notes[i];
+			money =rem;
+			total += count;
+			return count ;
+		}
+		i++;
+		return calculate(money, notes);
+	}
+}
+//Program to sort the intergers by using bubble sort.
+
+
+/**
+ * @param array input array
+ */
+public static void bubbleSort(int[] array) {
+	int n = array.length;
+	for (int i = 0; i < n-1; i++)
+		for (int j = 0; j < n-i-1; j++)
+			if (array[j] > array[j+1])
+			{
+				int temp = array[j];
+				array[j] = array[j+1];
+				array[j+1] = temp;
+
+			}
+	for (int i = 0; i < n; i++)
+	{
+		System.out.println(array[i]);
+	}
+}
+
+//Program to swap the nibbles
+
+/**
+ * @param x decimal input
+ * @return
+ */
+public static int swapNibbles(int x)
+{
+	return ((x & 0x0F) << 4 | (x & 0xF0) >> 4); 	
+
+}
+
+//Program to sort the string by using merge sort
+/**
+ * @param array input array
+ * @param low  lower index value
+ * @param high  higher index
+ */
+public static void mergeSort(String array[],int low,int high)
+{
+	int n=high-low;
+	if(n<=1)
+		return;
+	int mid=low+n/2;
+	mergeSort(array,low,mid);
+	mergeSort(array,mid,high);
+	String[] temp=new String[n];
+	int i=low,j=mid;
+	for(int k=0;k<n;k++)
+	{
+		if(i==mid)
+			temp[k]=array[j++];
+		else if(j==high)
+			temp[k]=array[i++];
+		else if(array[j].compareToIgnoreCase(array[i])<0)
+			temp[k]=array[j++];
+		else
+			temp[k]=array[i++];
+	}
+
+	for(int k=0;k<n;k++)
+	{
+		array[low +k]=temp[k];
+	}
+
+}
+//Program to sort the string using bubble sort
+/**
+ * @param array input array string
+ */
+public static void bubble_Sort_String(String[] array) {
+	int n = array.length;
+	String temp="";
+	for (int i = 0; i < n-1; i++)
+		for (int j = 0; j < n-i-1; j++)
+			if ((array[j]).compareTo(array[j+1])>0)
+			{
+				temp = array[j];
+				array[j] = array[j+1];
+				array[j+1] = temp;
+
+			}
+	for (int i = 0; i < n; i++)
+	{
+		System.out.println(array[i]);
+	}
+}
+//Program to sort the string using binary search
+/**
+ * @param a input array string
+ * @param key key string
+ */
+public static void binary_Search_String(String[] a,String key)
+{
+	int first=0;
+	int last=a.length;		
+	int mid=0;
+
+
+	if(first<=last)
+	{
+		mid=(first+last)/2;
+
+		if(a[mid].equalsIgnoreCase(key))
+		{
+			System.out.println( "The key value found at "+mid);
+
+
+			if((a[mid]).compareTo((key))>0)
 			{
 
 				first=mid+1;
@@ -249,214 +462,142 @@ public class AlgorithmUtility {
 
 		}
 
-return 0;
-
-	}
-
-
-
-	public static void insertion_Sort_String(String[] arr,int n) {
-
-		int i=0;
-		String temp=" ";
-		for (i=1;i<n;i++)
-		{
-			temp=arr[i];
-			int j=i-1;
-			while((j>=0) && ((arr[j].compareTo(temp))>0))
-			{
-
-				{
-					arr[j+1]=arr[j];
-					j--;
-
-					arr[j+1]=temp;
-				}
-			}
-
-
-
-		}
-
-
-	}
-
-
-	////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-	static int i=0;
-	static int total=0;
-	static int money;
-	public static   int calculate(int money,int[]notes)
-	{
-		int rem;
-		if(money==0)
-		{
-			return -1 ;
-		}
-		else
-		{
-			if(money>=notes[i])
-			{
-				int count =money/notes[i];
-				rem = money%notes[i];
-				money =rem;
-				total += count;
-				return count ;
-			}
-			i++;
-			return calculate(money, notes);
-		}
-	}
-
-
-
-	////////////////////////////////////////////////////////
-
-
-	public static void bubbleSort(int[] array) {
-		int n = array.length;
-		for (int i = 0; i < n-1; i++)
-			for (int j = 0; j < n-i-1; j++)
-				if (array[j] > array[j+1])
-				{
-					int temp = array[j];
-					array[j] = array[j+1];
-					array[j+1] = temp;
-
-				}
-		for (int i = 0; i < n; i++)
-		{
-			System.out.println(array[i]);
-		}
-	}
-
-	////////////////////////////////////////////////////////////
-	public static int swapNibbles(int x)
-	{
-		return ((x & 0x0F) << 4 | (x & 0xF0) >> 4); 	
-
-	}
-
-
-	public static void mergeSort(String array[],int low,int high)
-	{
-		int n=high-low;
-		if(n<=1)
-			return;
-		int mid=low+n/2;
-		mergeSort(array,low,mid);
-		mergeSort(array,mid,high);
-		String[] temp=new String[n];
-		int i=low,j=mid;
-		for(int k=0;k<n;k++)
-		{
-			if(i==mid)
-				temp[k]=array[j++];
-			else if(j==high)
-				temp[k]=array[i++];
-			else if(array[j].compareToIgnoreCase(array[i])<0)
-				temp[k]=array[j++];
-			else
-				temp[k]=array[i++];
-		}
-
-		for(int k=0;k<n;k++)
-		{
-			array[low +k]=temp[k];
-		}
-
-	}
-
-	public static void bubble_Sort_String(String[] array) {
-		int n = array.length;
-		String temp="";
-		for (int i = 0; i < n-1; i++)
-			for (int j = 0; j < n-i-1; j++)
-				if ((array[j]).compareTo(array[j+1])>0)
-				{
-					temp = array[j];
-					array[j] = array[j+1];
-					array[j+1] = temp;
-
-				}
-		for (int i = 0; i < n; i++)
-		{
-			System.out.println(array[i]);
-		}
-	}
-
-	public static void binary_Search_String(String[] a,String key)
-	{
-		int first=0;
-		int last=a.length;		
-		int mid=0;
-
-
-		if(first<=last)
-		{
-			mid=(first+last)/2;
-
-			if(a[mid].equalsIgnoreCase(key))
-			{
-				System.out.println( "The key value found at "+mid);
-
-
-				if((a[mid]).compareTo((key))>0)
-				{
-
-					first=mid+1;
-
-				}	
-
-				else 
-				{
-					last=mid-1;
-
-
-				}
-
-			}
-
-
-
-		}
-
-	}
-	public static void insertionSort(int[] array3,int n) {
-
-		int i=0;
-
-		for (i=1;i<n;i++)
-		{
-			int temp=array3[i];
-			int j=i-1;
-			while((j>=0) && ((array3[j]>(temp))))
-			{
-
-				{
-					array3[j+1]=array3[j];
-					j--;
-
-					array3[j+1]=temp;
-				}
-			}
-
-
-
-		}
 
 
 	}
 
 }
+//Program to sort the array using insertion sort
+
+/**
+ * @param array3 input array3
+ * @param n number of elements
+ */
+public static void insertionSort(int[] array3,int n) {
+
+	int i=0;
+
+	for (i=1;i<n;i++)
+	{
+		int temp=array3[i];
+		int j=i-1;
+		while((j>=0) && ((array3[j]>(temp))))
+		{
+
+			{
+				array3[j+1]=array3[j];
+				j--;
+
+				array3[j+1]=temp;
+			}
+		}
 
 
+
+	}
+
+
+}
+//Program to print the pallindrome numbers
+/**
+ * 
+ * 
+ * @param n the integer which to check for pallindrome
+ * @return true if its pallindrome or false if its not
+ */
+
+public static boolean Pallindrome(int n) {
+	int temp = n;
+	int sum = 0;
+	while (temp != 0) {
+		int r = temp % 10;
+		sum = sum * 10 + r;
+		temp = temp / 10;
+	}
+	if (sum == n) {
+		return true;
+	}
+	return false;
+}
+/**
+ * to check the values are anagrams or not
+ * 
+ * @param n1 input number1
+ * @param n2 input number2
+ * @return
+ */
+public static boolean anagram(int n1, int n2) {
+	int[] n1count = count(n1);
+	int[] n2count = count(n2);
+	for (int i = 0; i < n2count.length; i++) {
+		if (n1count[i] != n2count[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+public static void primePallindrome() {
+	System.out.println();
+	boolean b;
+	for (int j = 2; j <= 1000; j++) {
+		b = true;
+		for (int i = 2; i < j / 2; i++) {
+			if (j % i == 0) {
+				b = false;
+				break;
+			}
+		}
+		if (b && Pallindrome(j))
+			System.out.print(j + " ");
+	}
+}
+
+/**
+ * Function to check if no is anagram or not
+ */
+public static void primeAnagrams() {
+	ArrayList<Integer> ar = new ArrayList<Integer>();
+	System.out.println();
+	boolean b;
+	for (int j = 2; j <= 1000; j++) {
+		b = true;
+		for (int i = 2; i < j / 2; i++) {
+			if (j % i == 0) {
+				b = false;
+				break;
+			}
+		}
+		if (b)
+			ar.add(j);
+	}
+	for (int i = 0; i < ar.size(); i++) {
+		for (int j = i + 1; j < ar.size(); j++) {
+			if (anagram(ar.get(i), ar.get(j))) {
+				System.out.println(ar.get(i) + "  " + ar.get(j));
+			}
+		}
+	}
+}
+
+
+
+/**
+ * Function to count the value in given integer be place
+ * 
+ * @param n the integer value to count
+ * @return the integer array for the count value
+ */
+public static int[] count(int n) {
+	int[] count = new int[10];
+	int temp = n;
+	while (temp != 0) {
+		int r = temp % 10;
+		count[r]++;
+		temp = temp / 10;
+	}
+	return count;
+}
+}
 
 
 

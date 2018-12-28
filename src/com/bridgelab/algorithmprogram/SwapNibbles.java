@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin SwapNibbles.java
- *  Execution:    java -cp bin com.bridgelabz.util.SwapNibbles n
+ *  Execution:    java -cp bin com.bridgelabz.util.AlgorithmUtility n
  *  
  *  Purpose: determine the new value by swapping the nibbles
  *
@@ -10,16 +10,12 @@
  *
  ******************************************************************************/
 package com.bridgelab.algorithmprogram;
-
-import java.util.Scanner;
-
 import com.bridgelab.util.AlgorithmUtility;
 public class SwapNibbles {
 
 	public static void main(String[] args) {
-		Scanner S=new Scanner(System.in);
 		System.out.println("enter the Value of n");
-		int x =S.nextInt();
+		int x =AlgorithmUtility.intValue();
 	    int flag=0;
 	    int c=AlgorithmUtility.swapNibbles(x);
  	   System.out.println(c);

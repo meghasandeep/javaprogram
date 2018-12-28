@@ -1,19 +1,28 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin TwoDArray.java
+ *  Execution:    java -cp bin com.bridgelabz.util.TwoDArray n
+ *  
+ *  Purpose: printing the T
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.functionalprogram;
 import com.bridgelab.util.*;
 
-import java.util.Scanner;
 public class TwoDArray {
 	public static void main(String[] args)
 	{
-		Scanner S=new Scanner(System.in);
 		
 		FunctionalUtility f1=new FunctionalUtility();
 		System.out.println("enter the number of rows:");
-          int m=S.nextInt();	
+          int m=FunctionalUtility.intValue();	
           System.out.println("enter the number of column:");
-          int n=S.nextInt();	
+          int n=FunctionalUtility.intValue();	
           System.out.println("1:Integer  2:Double  3:Boolean" );
-          int flag=S.nextInt();
+          int flag=FunctionalUtility.intValue();
           switch(flag)
           {
           case 1:Integer[][] array=new Integer[m][n];
@@ -21,7 +30,7 @@ public class TwoDArray {
           {
         	  for(int j=0;j<n;j++)
         	  {
-        		  array[i][j]=S.nextInt();
+        		  array[i][j]=FunctionalUtility.intValue();
         	  }
           }
         		f1.displayArray(array,m,n);
@@ -32,7 +41,7 @@ public class TwoDArray {
           for(int i=0;i<m;i++)
           {
         	  for(int j=0;j<n;j++){
-        		  darray[i][j]=S.nextDouble();
+        		  darray[i][j]=FunctionalUtility.doubleValue();
         	  }
           }
         		f1.displayArray(darray,m,n);
@@ -43,18 +52,18 @@ public class TwoDArray {
               {
         	  for(int j=0;j<n;j++)
         	  {
-        		  barray[i][j]=S.nextBoolean();
-        	  }
+        		  barray[i][j]=FunctionalUtility.win();
               }
         		f1.displayArray(barray,m,n);
         		break;
+              }
         		default: System.out.println("Select among the choice");
         		break;
               }
-          S.close();
+          //FunctionalUtility.close();
 	   }
-     
 }
+
  		    
         		  
         		  

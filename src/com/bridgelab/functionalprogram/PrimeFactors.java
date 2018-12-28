@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin PrimeFactors.java
- *  Execution:    java -cp bin com.bridgelabz.util.PrimeFactors n
+ *  Execution:    java -cp bin com.bridgelabz.util.FunctionalUtility n
  *  
  *  Purpose: Finding the prime factors in the given range
  *
@@ -14,8 +14,9 @@ import com.bridgelab.util.FunctionalUtility;
 public class PrimeFactors {
 	public static void main(String[] args)
 	{
- FunctionalUtility f=new FunctionalUtility();
- f.primeFactor();
+		System.out.println("enter the number  ");
+		int n=FunctionalUtility.intValue();
+ FunctionalUtility.primeFactor(n);
 	}
 
 }

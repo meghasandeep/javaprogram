@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin LeapYear.java
- *  Execution:    java -cp bin com.bridgelabz.util.LeapYear n
+ *  Execution:    java -cp bin com.bridgelabz.util.FunctionalUtility n
  *  
  *  Purpose: Converting decimal value to binary value
  *
@@ -11,14 +11,15 @@
  ******************************************************************************/
 package com.bridgelab.functionalprogram;
 import com.bridgelab.util.FunctionalUtility;
-import java.util.Scanner;
 
 
 public class LeapYear 
 {
 	public static void main(String[] args)
 	{
- FunctionalUtility lp=new FunctionalUtility();
- lp.leapYear();
+		System.out.println("enter the year");
+
+		int year=FunctionalUtility.intValue();
+ FunctionalUtility.leapYear(year);
 }
 }

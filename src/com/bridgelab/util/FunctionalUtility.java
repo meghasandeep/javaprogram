@@ -3,23 +3,74 @@ package com.bridgelab.util;
 import java.util.Random;
 import java.util.Scanner;
 import com.bridgelab.functionalprogram.*;
+/**
+ * @author admin1
+ *
+ * @param <E>
+ */
 public class FunctionalUtility <E>{
+	static Scanner sc = new Scanner(System.in);
 
-
-
-
-
-
-	public void replaceString( String str1)
+	public static int intValue()
 	{
-		Scanner S=new Scanner(System.in);
+		try
+		{
+			return sc.nextInt();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return 0;
+	}
 
-		String S1=S.nextLine();
+	public static double doubleValue()
+	{
+		try
+		{
+			return sc.nextInt();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return 0.0;
+	}
+
+	public static String StringValue()
+	{
+		try
+		{
+			return sc.next();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
+
+
+	//Program to replace the given string by userdefied string.
+
+	/**
+	 * @param str1 input string to replace the given string
+	 */
+	public static void replaceString( String str1)
+	{
+
+		//input string from user
+		String S1=FunctionalUtility.StringValue();
+		// input string length should be greater than 3
 		if(S1.length()>=3)
 		{
+			// replace the given string by user input string
 			String S2 = str1.replace("&&&username&&", S1);
 			System.out.println(S2);
 		}
+		//if input string length is less than 3
 		else
 		{
 
@@ -29,11 +80,15 @@ public class FunctionalUtility <E>{
 
 	}
 
+	//Program to print the percentage of head and tail when flip the coin.
 
 
-
-	public void flipCoin(int count)
+	/**
+	 * @param count number of times flips the coin.
+	 */
+	public static void flipCoin(int count)
 	{
+		//initialize head,tail,count.
 		int head=0;
 		int tail=0;
 		int i=count;
@@ -41,6 +96,7 @@ public class FunctionalUtility <E>{
 		while(count>0)
 		{
 			double r=result.nextInt();
+			//if random number generated is equal to 0.5 increment tail value
 			if(r==0.5)
 
 				tail++;
@@ -59,51 +115,33 @@ public class FunctionalUtility <E>{
 	}
 
 
+	//Program to check whether the entered year is leap or not.
 
-
-
-
-
-
-
-
-	public void leapYear()
+	public static void leapYear(int year)
 	{
 
-		Scanner S=new Scanner(System.in);
-		System.out.println("enter the year");
 
-		int year=S.nextInt();
-
-		if((year%400 == 0) &&(year%4 ==0))
+		//leap year should be divided by both 4 and 400
+		if((year%4== 0) ||(year%400 ==0 &&year%100==0))
 		{
 			System.out.println("year is leap year");
+			
 		}
-		else if(year%100==0)
-		{
-			System.out.println("year is not leap year");
-		}
+		
 		else
 		{
 			System.out.println("year is not leap year");
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-	public  void power(int n)
+	// Program to find the power of 2.
+	/**
+	 * @param n number till we want to find the power of 2
+	 */
+	public static void power(int n)
 	{
-		
-		int count=0;
+
+		int count=0;//
+		// entered input should be between 0 to 31
 		if(n>=0 && n<31)
 		{
 
@@ -116,42 +154,46 @@ public class FunctionalUtility <E>{
 
 
 		}
+		// if entered input number is more than 31
 		else
 		{
 			System.out.println("out of range");
 		}
 	}
 
-
-	public void harmonic()
+//program to find the harmonic sum of the numbers.
+	/**
+	 * @param n input value till we want to find the harmonic sum
+	 */
+	public static void harmonic(int n)
 	{
-		Scanner N=new Scanner(System.in);
-		System.out.println("enter the number  ");
-		int n=N.nextInt();
+        //initialize the i value
 		int i=1;
+		//result is used to store the result 
 		double result=0;
 		for(i=1;i<=n;i++)
 		{
-
+              //float is used to avoid  typecasting
 			result=result+(float)1/i;
 
 		}
 		System.out.println(result);
 	}
+//Program to find the Prime facttors for the given number
 
+	/**
+	 * @param n input number to find the prime factor
+	 */
 
-	public void primeFactor()
+	public static void primeFactor(int n)
 	{
-		Scanner N=new Scanner(System.in);
-		System.out.println("enter the number  ");
-		int n=N.nextInt();
 		int i=1;int j=2;
 		int res = 1;
 		for(i=2;i<=n;i++)
 		{
 			if(n%i==0)
-			{
-
+			{ 
+				
 				for(j=2;j<=(i/2);j++)	
 				{
 					if(i%j==0)
@@ -170,19 +212,19 @@ public class FunctionalUtility <E>{
 			}
 		}
 	}
+//program to find the perecentage of win and loss 
 
 
-
-	public void gambler()
+	
+	/**
+	 * @param n   number of times
+	 * @param stake   present amount
+	 * @param goal   goal amount
+	 */
+	public static void gambler(int n,int stake,int goal)
 	{
-		Scanner N=new Scanner(System.in);
-		System.out.println("enter the goal  ");
-		int goal =N.nextInt();
-		System.out.println("enter the stake  ");
-		int stake=N.nextInt();
-		System.out.println("enter the num of time ");
-		int n=N.nextInt();
-		Random result=new Random();
+		//generation of random numbers
+        Random result=new Random();
 		int i=1;
 		int win=0;
 		int loss=0;
@@ -218,8 +260,12 @@ public class FunctionalUtility <E>{
 		System.out.println(win*100/n);
 		System.out.println(loss*100/n);
 	}
-
-	public void coupen(int n)
+//Program to generate random numbers to get a distinct coupen number.
+	
+	/**
+	 * @param n input coupen number
+	 */
+	public static void coupen(int n)
 	{
 		boolean[] coup=new boolean[n];
 		int count=0;
@@ -240,159 +286,272 @@ public class FunctionalUtility <E>{
 		System.out.println("num of count"+count);
 
 	}
+//Program to find the triplet sum is zero or not
 
-
-
-
-
-/////////////////////////////////////////////
-
-public void triplet(int[] arr,int n)
-{
-		
-	boolean flag =false;
-	for(int i=0;i<n-2;i++)
+	/**
+	 * @param arr input array elements
+	 * @param n number of input
+	 */
+	public static void triplet(int[] arr,int n)
 	{
-		for(int j=i+1;j<n-1;j++)
+
+		boolean flag =false;
+		for(int i=0;i<n-2;i++)
 		{
-			for(int k=j+1;k<n;k++)
+			for(int j=i+1;j<n-1;j++)
 			{
-				if(arr[i]+arr[j]+arr[k]==0)
+				for(int k=j+1;k<n;k++)
 				{
-					System.out.println("true");
-				flag=true;
-			
-					
-			     }
-				
-		     }
-			
-	      }
-		
-       }
-if(flag==false)
-{
-	System.out.println("false");
-}
-}
+					if(arr[i]+arr[j]+arr[k]==0)
+					{
+						System.out.println("true");
+						flag=true;
 
 
-///////////////////////////////////////////
+					}
 
-public   void displayArray(E[][]garray,int m,int n)
-{
-	 for(int i=0;i< m;i++)
-     {
-   	    for(int j=0;j<n;j++)
-   	    {
-   		System.out.print(garray[i][j] +" ");
-   	  }
-   	    System.out.println();
-     }
-}
+				}
 
+			}
 
-//////////////////////////////////////////////////
-public void distance()
-{
-	Scanner N=new Scanner(System.in);
-	System.out.println("enter the value of x  ");
-	int x =N.nextInt();
-	System.out.println("enter the value of y ");
-	int y=N.nextInt();
-	double result;
-	result=Math.sqrt(x*x+y*y);
-	System.out.println("result is"+result);
-	
-}
+		}
+		if(flag==false)
+		{
+			System.out.println("false");
+		}
+	}
+//Program to display the 2D array elements
 
-
-
-///////////////////////////////
-public void quadratic(double a,double b,double c) {
-	
-	double d=Math.sqrt(b*b-4*a*c);
-	double root1=(-b+(d)/(2*a*b));
-	double root2=(-b-(d)/(2*a*b));
-	System.out.println(root1);
-	System.out.println(root2);
-	
-
-	
-}
-
-
-
-////////////////////////////////////
-
-
-	
-	
-	static long starttime,endtime;
-	
-	   public static long start()
-	   {
-		  starttime= System.currentTimeMillis();
-		 
-		 return(starttime);
-	   }
-	   public static long end()
-	   {
-        endtime= System.currentTimeMillis();
-	   return(endtime);
-	   }
-	
-	   public static long elapse() {
-	
-	long elaspedtime= endtime-  starttime ;
-		return(elaspedtime);
+	/**
+	 * @param garray generic array
+	 * @param m number of rows
+	 * @param n numbner of columns
+	 */
+	public   void displayArray(E[][]garray,int m,int n)
+	{
+		for(int i=0;i< m;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				System.out.print(garray[i][j] +" ");
+			}
+			System.out.println();
+		}
 	}
 
 
-public void windChill(double t,double v)
-{
-	double w = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v, 0.16);
-	System.out.println("The value of W is   " +w);
+// Program to find the distance between origin and the given point.
 	
-}
-
-
-
-////////////////////////////////////////
-public void  permutations()
-{
-	class Permutations
+	/**
+	 * @param x  x axis distance from origin
+	 * @param y  y axis distance from origin
+	 */
+	public static void distance(int x,int y)
 	{
-		private  void swap(char[] ip , int i, int j)
+		
+	
+		double result;
+		result=Math.sqrt(x*x+y*y);
+		System.out.println("result is"+result);
+
+	}
+
+
+
+//Program to find the quadratic roots
+	
+	/**
+	 * @param a input value of a
+	 * @param b input value of b
+	 * @param c input value of c
+	 */
+	public static void quadratic(double a,double b,double c) {
+
+		double d=Math.sqrt(b*b-4*a*c);
+		double root1=(-b+(d)/(2*a*b));
+		double root2=(-b-(d)/(2*a*b));
+		System.out.println(root1);
+		System.out.println(root2);
+
+
+
+	}
+
+
+//Program to find the elapsed time between the start time and end time
+
+
+	static long starttime,endtime;
+
+	/**
+	 * @return printing the started time
+	 */
+	public static long start()
+	{
+		starttime= System.currentTimeMillis();
+
+		return(starttime);
+	}
+	/**
+	 * @return printing the end time
+	 */
+	
+	public static long end()
+	{
+		endtime= System.currentTimeMillis();
+		return(endtime);
+	}
+	/**
+	 * @return elapsed time between start and end time
+	 */
+	public static long elapse() {
+
+		long elaspedtime= endtime-  starttime ;
+		return(elaspedtime);
+	}
+//Program to find the effective temperature
+
+	/**
+	 * @param t temperature value given by user
+	 * @param v velocity value given by user
+	 */
+	public static void windChill(double t,double v)
+	{
+		double w = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v, 0.16);
+		System.out.println("The value of W is   " +w);
+
+	}
+
+  // Utility function to swap two characters in a character array
+	private static void swap(char[] ip, int i, int j) {
 		{
 			char temp = ip[i];
 			ip[i] = ip[j];
 			ip[j] = temp;
-			System.out.println((ip));
 		}
-	
-	private  void permutations(char[] ip, int Index)
-	{
-		if (Index == ip.length - 1) {
-			System.out.println(ip);
-		}
-
-		for (int i = Index; i < ip.length; i++)
+	}
+	// Recursive function to generate the permutations of a String
+	public  static void permutations(char[]ip,int Index){
 		{
-			
-			swap(ip, Index, i);
-			permutations(ip, Index + 1);
-			swap(ip, Index, i);
-		
+			if (Index == ip.length - 1) {
+				System.out.println(String.valueOf(ip));
+			}
+
+			for (int i = Index; i < ip.length; i++)
+			{
+				swap(ip, Index, i);
+				permutations(ip,Index + 1);
+				swap(ip,Index, i);
+			}
+		}
+
+
+
+	}
+//Program to play Tic TAC Toe
+	
+	static int player = 0;
+	static int[][] BOARD = new int[3][3];
+	static boolean isEmpty = true;
+
+	public static void initBoard() {
+		System.out.println("TIC TAC TOE GAME\nComputer is o\nPlayer  is x ");
+		for (int i = 0; i < BOARD.length; i++) {
+			for (int j = 0; j < BOARD[i].length; j++) {
+				BOARD[i][j] = -10;
+			}
+		}
+		System.out.println("Board is this :");
+		dispBoard();
+	}
+
+	public static void dispBoard() {
+		int count = 0;
+		for (int i = 0; i < BOARD.length; i++) {
+			System.out.println("---------------");
+			System.out.print("||");
+			for (int j = 0; j < BOARD[i].length; j++) {
+				if (BOARD[i][j] == 0) {
+					count++;
+					System.out.print(" o |");
+				} else if (BOARD[i][j] == 1) {
+					count++;
+					System.out.print(" x |");
+				} else
+					System.out.print("   |");
+			}
+			System.out.println("|");
+		}
+		if (count == 9) {
+			isEmpty = false;
+		}
+		System.out.println("---------------");
 	}
 	
-	
+
+	public static void putVal() {
+		int i;
+		int j;
+		if (player % 2 == 1) {
+			i = (int) (Math.random() * 10) % 3;
+			j = (int) (Math.random() * 10) % 3;
+		} else {
+			Scanner s = new Scanner(System.in);
+			System.out.println("enter value of x and y by space");
+			i = s.nextInt();
+			j = s.nextInt();
+		}
+		if (BOARD[i][j] == -10) {
+			if (player % 2 == 0) {
+				BOARD[i][j] = 0;
+			} else {
+				BOARD[i][j] = 1;
+				System.out.println("Coumputer Choosing " + i + " " + j);
+			}
+		} else
+			putVal();
+
 	}
-}
+
+	public static boolean win() {
+		return ((BOARD[0][0] + BOARD[0][1] + BOARD[0][2] == player * 3)
+				|| (BOARD[1][0] + BOARD[1][1] + BOARD[1][2] == player * 3)
+				|| (BOARD[2][0] + BOARD[2][1] + BOARD[2][2] == player * 3)
+				|| (BOARD[0][0] + BOARD[1][0] + BOARD[2][0] == player * 3)
+				|| (BOARD[0][1] + BOARD[1][1] + BOARD[2][1] == player * 3)
+				|| (BOARD[0][2] + BOARD[1][2] + BOARD[2][2] == player * 3)
+				|| (BOARD[0][0] + BOARD[1][1] + BOARD[2][2] == player * 3)
+				|| (BOARD[2][0] + BOARD[1][1] + BOARD[0][2] == player * 3));
+	}
+
+	public static void play() {
+		initBoard();
+		while (isEmpty) {
+			System.out.println("Players turn");
+			putVal();
+			dispBoard();
+			if (win()) {
+				System.out.println("Player won");
+				return;
+			}
+			player = 1;
+			System.out.println("Computers turn");
+			putVal();
+			dispBoard();
+			if (win()) {
+				System.out.println("Computer won");
+				return;
+			}
+			player = 0;
+		}
+	}
+
 }
 
 
-}
+
+
+
 
 
 

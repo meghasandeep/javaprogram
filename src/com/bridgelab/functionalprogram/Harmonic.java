@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin Harmonic.java
- *  Execution:    java -cp bin com.bridgelabz.util.Harmonic n
+ *  Execution:    java -cp bin com.bridgelabz.util.FunctionalUtility n
  *  
  *  Purpose: finding the sum of harmonic numbers in the given limit
  *
@@ -14,8 +14,10 @@ import com.bridgelab.util.FunctionalUtility;
 public class Harmonic {
 	public static void main(String[] args)
 	{
-	FunctionalUtility f=new FunctionalUtility();
-	f.harmonic();
+
+		System.out.println("enter the number  ");
+		int n=FunctionalUtility.intValue();
+	FunctionalUtility.harmonic(n);
 
 
 }

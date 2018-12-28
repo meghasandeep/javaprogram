@@ -1,23 +1,31 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin Triplet.java
+ *  Execution:    java -cp bin com.bridgelabz.util.Triplet n
+ *  
+ *  Purpose: finding the triplet numbers whose sum is zero
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.functionalprogram;
 import com.bridgelab.util.FunctionalUtility;
-import java.util.Scanner;
 
 public class Triplet {
 	public static void main(String[] args)
 	{
-		Scanner S=new Scanner(System.in);
 		System.out.println("enter the number");
-		FunctionalUtility f1=new FunctionalUtility();
-          int n=S.nextInt();		
+          int n=FunctionalUtility.intValue();;		
           int[] arr=new int[n];
           for(int i=0;i<n;i++)
           {
         	  System.out.println("the elements are");
-               arr[i]=S.nextInt();
+               arr[i]=FunctionalUtility.intValue();
           }
 			
 	     
-		f1.triplet(arr,n);
+          FunctionalUtility.triplet(arr,n);
 		
 	}
 

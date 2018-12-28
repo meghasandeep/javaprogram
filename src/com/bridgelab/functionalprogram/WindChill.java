@@ -1,17 +1,24 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin WindChill.java
+ *  Execution:    java -cp bin com.bridgelabz.util.WindChill n
+ *  
+ *  Purpose:Calculating the temperature value and velocity value in windchill.
+ *
+ *  @author  Megha
+ *  @version 1.0
+ *  @since   24-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelab.functionalprogram;
-import java.util.Scanner;
-
 import com.bridgelab.util.FunctionalUtility;
 
 public class WindChill {
 	public static void main(String[] args)
 	{
-		FunctionalUtility f=new FunctionalUtility();
-		Scanner S=new Scanner(System.in);
 		System.out.println("enter the temperature value");
-		double t=S.nextDouble();
+		double t=FunctionalUtility.doubleValue();
 		System.out.println("enter the value of velocity ");
-		double v=S.nextDouble();
-        f.windChill(t,v);
+		double v=FunctionalUtility.doubleValue();
+		FunctionalUtility.windChill(t,v);
 }
 }

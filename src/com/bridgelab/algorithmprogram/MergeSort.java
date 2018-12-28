@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin MergeSort.java
- *  Execution:    java -cp bin com.bridgelabz.util.MergeSort n
+ *  Execution:    java -cp bin com.bridgelabz.util.AlgorithmUtility n
  *  
  *  Purpose: Searching the integer value by using Merge sort
  *
@@ -10,9 +10,6 @@
  *
  ******************************************************************************/
 package com.bridgelab.algorithmprogram;
-
-import java.util.Scanner;
-
 import com.bridgelab.util.AlgorithmUtility;
 
 public class MergeSort
@@ -20,15 +17,14 @@ public class MergeSort
 
     public static void main(String[] args)
     {
-        Scanner sc=new Scanner(System.in);
         System.out.println("Enter the size of your array");
-        int n=sc.nextInt();
+        int n=AlgorithmUtility.intValue();
         String arr[]=new String[n];
         System.out.println("Enter the elements");
 
         for( int i=0;i<n;i++)
         {   
-            arr[i]=sc.next();
+            arr[i]=AlgorithmUtility.StringValue();
         }
        
         AlgorithmUtility.mergeSort(arr,0,n);

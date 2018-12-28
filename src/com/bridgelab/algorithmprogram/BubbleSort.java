@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin BubbleSort.java
- *  Execution:    java -cp bin com.bridgelabz.util.BubbleSort n
+ *  Execution:    java -cp bin com.bridgelabz.util.AlgorithmUtility n
  *  
  *  Purpose: Searching the integer value by using Binary search
  *
@@ -11,25 +11,21 @@
  ******************************************************************************/
 
 package com.bridgelab.algorithmprogram;
-
-import java.util.Scanner;
-
 import com.bridgelab.util.AlgorithmUtility;
 
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		AlgorithmUtility f=new AlgorithmUtility();
-		Scanner S=new Scanner(System.in);
+		
 		System.out.println("enter the number of  elements");
-		int n=S.nextInt();
+		int n=AlgorithmUtility.intValue();
 		int array[]=new int[n];
 		System.out.println("enter the array elements");
 		for(int i=0;i<n;i++) 
 		{
-			 array[i] =S.nextInt();
+			 array[i] =AlgorithmUtility.intValue();
 		}
-		f.bubbleSort(array);
+		AlgorithmUtility.bubbleSort(array);
 	}
 
 }

@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac -d bin ToBinary.java
- *  Execution:    java -cp bin com.bridgelabz.util.ToBinary n
+ *  Execution:    java -cp bin com.bridgelabz.util.AlgorithmUtility n
  *  
  *  Purpose: Converting decimal value to binary value
  *
@@ -10,17 +10,14 @@
  *
  ******************************************************************************/
 package com.bridgelab.algorithmprogram;
-import java.util.Scanner;
-
 import com.bridgelab.util.AlgorithmUtility;
 public class ToBinary {
 
 	public static void main(String[] args) {
-		Scanner S=new Scanner(System.in);
-		System.out.println("enter the Value of n");
-		int n =S.nextInt();
-		AlgorithmUtility f=new AlgorithmUtility();
-	    int[] b=f.toBinary(n);
+		
+	   System.out.println("enter the Value of n");
+		int n =AlgorithmUtility.intValue();
+	    int[] b=AlgorithmUtility.toBinary(n);
 	    for(int j=7;j>=0;j--)
 		{
 			System.out.println(b[j]);
