@@ -19,78 +19,40 @@ public class UtilityClass {
 
 	public static void main(String[] args) {
 		
-		System.out.println("1.binary search of numbers 2. binary search of strings 3.insertion sort of numbers 4.insertion sort of strings 5.bubble sort of numbers 6. bubble sort of strings");
+		System.out.println("1.binary search 2.insertion sort  3.bubble sort ");
 
 		System.out.println("enter the choice");
 		int choice=AlgorithmUtility.intValue();
 		switch(choice)
 		{
+		
 		case 1:System.out.println("enter the number of  elements");
 		int n1=AlgorithmUtility.intValue();
-		int array1[]=new int[n1];
+		String array1[]=new String [n1];
 		System.out.println("enter the value of  key");
-		int key1=AlgorithmUtility.intValue();
+		String key1=AlgorithmUtility.StringValue();
 		long a =FunctionalUtility.start();
-		System.out.println("start time is "+(a/1000));
+		System.out.println("start time is "+(a));
 		System.out.println("enter the array elements");
 		for(int i=0;i<n1;i++) 
 		{
-			array1[i] =AlgorithmUtility.intValue();
+			array1[i] =AlgorithmUtility.StringValue();
 		}
 		
 		long b=FunctionalUtility.end();
-		System.out.println("endtime is "+(b/1000));
+		System.out.println("endtime is "+(b));
+		
 		int x=AlgorithmUtility.binarySearch(array1,key1);
-		System.out.println(x);
+		System.out.println("key element found at "+x);
 		long c=FunctionalUtility.elapse();
-		System.out.println("elapsed time is "+(c/1000));
+		System.out.println("elapsed time is "+(c));
 		break;
+		
+		
+		
 		
 		
 		case 2:System.out.println("enter the number of  elements");
-		int n2=AlgorithmUtility.intValue();
-		String[] array2=new String[n2];
-		System.out.println("enter the value of  key");
-		String key2=AlgorithmUtility.StringValue();
-		long d =FunctionalUtility.start();
-		System.out.println("start time is "+(d/1000));
-		System.out.println("enter the array elements");
-		for(int i=0;i<n2;i++) 
-		{
-			array2[i] =AlgorithmUtility.StringValue();
-		}
-		long e=FunctionalUtility.end();
-		System.out.println("endtime is "+(e/1000));
-		AlgorithmUtility.binary_Search_String(array2,key2);
-		long f=FunctionalUtility.elapse();
-		System.out.println("elapsed time is "+(f/1000));
-		break;
-		
-		case 3:System.out.println("enter the number of  elements");
-		int n3=AlgorithmUtility.intValue();
-		int array3[]=new int[n3];
-		long g=FunctionalUtility.start();
-		System.out.println("start time is "+(g/1000));
-		System.out.println("enter the array elements");
-		for(int i=0;i<n3;i++) 
-		{
-			array3[i] =AlgorithmUtility.intValue();
-		}
-		long h=FunctionalUtility.end();
-		System.out.println("endtime is "+(h/1000));
-		AlgorithmUtility.insertionSort(array3,n3);
-		
-		System.out.println("Elements after sorting");
-        for(int i=0;i<n3;i++)
-        {
-            System.out.println(array3[i]+"");
-        }
-        long j=FunctionalUtility.elapse();
-        System.out.println("elapsed time is "+(j/1000));
-		break;
-		
-		
-		case 4:System.out.println("enter the number of  elements");
 		int n4=AlgorithmUtility.intValue();
 		String array4[]=new String[n4];
         long k =FunctionalUtility.start();
@@ -110,34 +72,9 @@ public class UtilityClass {
         }
 		long m=FunctionalUtility.elapse();
         System.out.println("elapsed time is "+(m/1000));
-
-
-		break;
-		case 5:System.out.println("enter the number of  elements");
-		int n5=AlgorithmUtility.intValue();
-		int array5[]=new int[n5];
-		long n =FunctionalUtility.start();
-        System.out.println("start time is "+(n/1000));
-		System.out.println("enter the array elements");
-		for(int i=0;i<n5;i++) 
-		{
-			array5[i] =AlgorithmUtility.intValue();
-		}
-		long o=FunctionalUtility.end();
-        System.out.println("end time is "+(o/1000));
-		AlgorithmUtility.bubbleSort(array5);
-		System.out.println("Elements after sorting");
-        for(int i=0;i<n5;i++)
-        {
-            System.out.println(array5[i]+"");
-        }
-        long p=FunctionalUtility.elapse();
-        System.out.println("elapsed time is "+(p/1000));
-		break;
+       break;
 		
-		
-		
-		case 6:System.out.println("enter the number of  elements");
+		case 3:System.out.println("enter the number of  elements");
 		int n6=AlgorithmUtility.intValue();
 		String array6[]=new String[n6];
 		long q=FunctionalUtility.start();

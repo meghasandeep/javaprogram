@@ -14,18 +14,19 @@ package com.bridgelab.algorithmprogram;
 import com.bridgelab.util.AlgorithmUtility;
 public class BinarySearch {
 	public static void main(String[] args) {
+			System.out.println("Enter any Number:");
+			int n=AlgorithmUtility.intValue();
+			int range=(int)(Math.pow(2,n-1));                //range calculation for the number
+			System.out.println("Take number between '0' to "+range);
+			int count=0;
+			String input="null";
+			int lower=0;
+			int upper=range;
+			int middle=(lower+upper/2);
+			AlgorithmUtility.binarySearch(lower,upper,middle,count,input,n-1);
 		
-		System.out.println("enter the number of  elements");
-		int n=AlgorithmUtility.intValue();
-		int a[]=new int[n];
-		System.out.println("enter the value of  key");
-		int key=AlgorithmUtility.intValue();
-		System.out.println("enter the array elements");
-		for(int i=0;i<n;i++) 
-		{
-		 a[i] =AlgorithmUtility.intValue();
-		}
-		int c=AlgorithmUtility.binarySearch(a,key);
-		System.out.println("the key value found at "+c);
-	} 
-}
+	
+	}
+	}
+
+

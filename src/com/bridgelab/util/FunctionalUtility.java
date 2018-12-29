@@ -13,41 +13,23 @@ public class FunctionalUtility <E>{
 
 	public static int intValue()
 	{
-		try
-		{
-			return sc.nextInt();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return 0;
+
+		return sc.nextInt();
 	}
+
 
 	public static double doubleValue()
 	{
-		try
-		{
-			return sc.nextInt();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return 0.0;
+
+		return sc.nextInt();
 	}
+
 
 	public static String StringValue()
 	{
-		try
-		{
-			return sc.next();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return null;
+
+		return sc.next();
+
 	}
 
 
@@ -125,9 +107,9 @@ public class FunctionalUtility <E>{
 		if((year%4== 0) ||(year%400 ==0 &&year%100==0))
 		{
 			System.out.println("year is leap year");
-			
+
 		}
-		
+
 		else
 		{
 			System.out.println("year is not leap year");
@@ -161,25 +143,25 @@ public class FunctionalUtility <E>{
 		}
 	}
 
-//program to find the harmonic sum of the numbers.
+	//program to find the harmonic sum of the numbers.
 	/**
 	 * @param n input value till we want to find the harmonic sum
 	 */
 	public static void harmonic(int n)
 	{
-        //initialize the i value
+		//initialize the i value
 		int i=1;
 		//result is used to store the result 
 		double result=0;
 		for(i=1;i<=n;i++)
 		{
-              //float is used to avoid  typecasting
+			//float is used to avoid  typecasting
 			result=result+(float)1/i;
 
 		}
 		System.out.println(result);
 	}
-//Program to find the Prime facttors for the given number
+	//Program to find the Prime facttors for the given number
 
 	/**
 	 * @param n input number to find the prime factor
@@ -191,31 +173,19 @@ public class FunctionalUtility <E>{
 		int res = 1;
 		for(i=2;i<=n;i++)
 		{
-			if(n%i==0)
-			{ 
-				
-				for(j=2;j<=(i/2);j++)	
-				{
-					if(i%j==0)
-					{
-						res=0;
-						break;
-
-					}
-				}   
-
-
-				if(res==1)
-
-					System.out.println(i);
-
+			while(n%i==0)
+			{
+				System.out.println(i);
+				n=n/i;
 			}
+			
 		}
+			
 	}
-//program to find the perecentage of win and loss 
+	//program to find the perecentage of win and loss 
 
 
-	
+
 	/**
 	 * @param n   number of times
 	 * @param stake   present amount
@@ -224,7 +194,7 @@ public class FunctionalUtility <E>{
 	public static void gambler(int n,int stake,int goal)
 	{
 		//generation of random numbers
-        Random result=new Random();
+		Random result=new Random();
 		int i=1;
 		int win=0;
 		int loss=0;
@@ -260,8 +230,8 @@ public class FunctionalUtility <E>{
 		System.out.println(win*100/n);
 		System.out.println(loss*100/n);
 	}
-//Program to generate random numbers to get a distinct coupen number.
-	
+	//Program to generate random numbers to get a distinct coupen number.
+
 	/**
 	 * @param n input coupen number
 	 */
@@ -286,7 +256,7 @@ public class FunctionalUtility <E>{
 		System.out.println("num of count"+count);
 
 	}
-//Program to find the triplet sum is zero or not
+	//Program to find the triplet sum is zero or not
 
 	/**
 	 * @param arr input array elements
@@ -320,7 +290,7 @@ public class FunctionalUtility <E>{
 			System.out.println("false");
 		}
 	}
-//Program to display the 2D array elements
+	//Program to display the 2D array elements
 
 	/**
 	 * @param garray generic array
@@ -340,16 +310,16 @@ public class FunctionalUtility <E>{
 	}
 
 
-// Program to find the distance between origin and the given point.
-	
+	// Program to find the distance between origin and the given point.
+
 	/**
 	 * @param x  x axis distance from origin
 	 * @param y  y axis distance from origin
 	 */
 	public static void distance(int x,int y)
 	{
-		
-	
+
+
 		double result;
 		result=Math.sqrt(x*x+y*y);
 		System.out.println("result is"+result);
@@ -358,8 +328,8 @@ public class FunctionalUtility <E>{
 
 
 
-//Program to find the quadratic roots
-	
+	//Program to find the quadratic roots
+
 	/**
 	 * @param a input value of a
 	 * @param b input value of b
@@ -378,7 +348,7 @@ public class FunctionalUtility <E>{
 	}
 
 
-//Program to find the elapsed time between the start time and end time
+	//Program to find the elapsed time between the start time and end time
 
 
 	static long starttime,endtime;
@@ -395,7 +365,7 @@ public class FunctionalUtility <E>{
 	/**
 	 * @return printing the end time
 	 */
-	
+
 	public static long end()
 	{
 		endtime= System.currentTimeMillis();
@@ -409,7 +379,7 @@ public class FunctionalUtility <E>{
 		long elaspedtime= endtime-  starttime ;
 		return(elaspedtime);
 	}
-//Program to find the effective temperature
+	//Program to find the effective temperature
 
 	/**
 	 * @param t temperature value given by user
@@ -422,7 +392,7 @@ public class FunctionalUtility <E>{
 
 	}
 
-  // Utility function to swap two characters in a character array
+	// Utility function to swap two characters in a character array
 	private static void swap(char[] ip, int i, int j) {
 		{
 			char temp = ip[i];
@@ -448,8 +418,8 @@ public class FunctionalUtility <E>{
 
 
 	}
-//Program to play Tic TAC Toe
-	
+	//Program to play Tic TAC Toe
+
 	static int player = 0;
 	static int[][] BOARD = new int[3][3];
 	static boolean isEmpty = true;
@@ -487,7 +457,7 @@ public class FunctionalUtility <E>{
 		}
 		System.out.println("---------------");
 	}
-	
+
 
 	public static void putVal() {
 		int i;
