@@ -15,62 +15,40 @@ import com.bridgelab.util.AlgorithmUtility;
 public class PredictDate {
 
 	public static void main(String[] args) {
-		while(true) {
-			System.out.println("Enter The Month");
-			int m =AlgorithmUtility.intValue();
-			if (m < 1 || m > 12) {
-				System.out.println("Months are between 1 and 12");
-				break;
-			}
-
-			System.out.println("Enter The Day");
-			int d = AlgorithmUtility.intValue();
-			if (d < 1 || d > 31) {
-				System.out.println("Days are between 1 and 31");
-				break;
-			}
-
-			System.out.println("Enter The Year");
-			int y = AlgorithmUtility.intValue();
-			if (y < -10000 || y > 10000) {
-				System.out.println("Years are between -10000 and 10000");
-				break;
-			}
-			int d0 = AlgorithmUtility.predictDate(m,d,y);
-
-			switch(d0){
-			case 0:
-				System.out.println("The day of the week is Sunday");
-				break;
-			case 1:	
-				System.out.println("The day of the week is Monday");
-				break;
-			case 2:
-				System.out.println("The day of the week is Tuesday");
-				break;
-			case 3:
-				System.out.println("The day of the week is Wednesday");
-				break;
-			case 4:
-				System.out.println("The day of the week is Thursday");
-				break;
-			case 5:
-				System.out.println("The day of the week is Friday");
-				break;
-			case 6:
-				System.out.println("The day of the week is Saturday");
-				break;
-			default:
-				System.out.println("Invalid input");
-			}
-			break;
-		}
 		
+			int m =Integer.parseInt(args[0]);
+			if (m < 1 || m > 12) 
+			{
+				System.out.println("Months are between 1 and 12");
+			}
+
+			int d = Integer.parseInt(args[0]);
+			if (d < 1 || d > 31) 
+			{
+				System.out.println("Days are between 1 and 31");
+				
+			}
+
+			int y = Integer.parseInt(args[0]);
+			if (y < -10000 || y > 10000) 
+			{
+				System.out.println("Years are between -10000 and 10000");
+				
+			}
+		
+			int f= AlgorithmUtility.predictDate(m,d,y);
+			String[] day= {"Sunday","Monday","Tuesday","Wednesday","Thursday","friday","saturday"};
+		
+			System.out.println("day is " +day[f]);
+		}
+
 	}
 
 
-	
-}
+
+
+
+
 
 
 

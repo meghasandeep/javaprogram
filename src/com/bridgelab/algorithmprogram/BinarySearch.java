@@ -14,8 +14,9 @@ package com.bridgelab.algorithmprogram;
 import com.bridgelab.util.AlgorithmUtility;
 public class BinarySearch {
 	public static void main(String[] args) {
-			System.out.println("Enter any Number:");
-			int n=AlgorithmUtility.intValue();
+		
+		
+		    int n=Integer.parseInt(args[0]);
 			int range=(int)(Math.pow(2,n-1));                //range calculation for the number
 			System.out.println("Take number between '0' to "+range);
 			int count=0;

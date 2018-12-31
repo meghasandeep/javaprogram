@@ -16,12 +16,14 @@ import com.bridgelab.util.AlgorithmUtility;
 public class Anagram {
 	public static void main(String[] args) {
 
-		System.out.println("enter the string1");
-		String str1 =AlgorithmUtility.StringValue();
-        System.out.println("enter the string2");
-		String str2 =AlgorithmUtility.StringValue();
-	     AlgorithmUtility.anagram(str1,str2);
-		 
+
+		System.out.print("Enter First String : ");
+		String str1 = AlgorithmUtility.StringValue();
+		System.out.print("Enter Second String : ");
+		String str2 = AlgorithmUtility.StringValue();
+		AlgorithmUtility.isAnagram(str1, str2);
 		
-}
+		
+	}
+
 }

@@ -21,24 +21,16 @@
 	public class BinarySearchWord {
 	    public static void main(String[] args) throws FileNotFoundException {
 	       
-	    	 // Get scanner instance
-	        String csvFile = "/home/admin1/Documents/Example.csv";
+	        String csvFile = "/home/admin1/Documents/name.csv";
 	      
 	        BufferedReader fileReader = new BufferedReader(new FileReader(csvFile));
 
-	        // Delimiter used in CSV file
 	        final String DELIMITER = ",";
 	        try {
 	            String line = " ";
-	            // fileReader = new BufferedReader(new FileReader(csvFile));
-	            // Read the file line by line
 	            while ((line = fileReader.readLine()) != null) {
-	                // Get all tokens available in line
 	                String[] tokens = line.split(DELIMITER);
-	                AlgorithmUtility.bubble_Sort_String(tokens);
-              // for(int i=0;i<tokens.length;i++) {
-                // System.out.println(tokens[i]);
-              //}
+	       
 	                for (String token : tokens) {
 	                    // Print all tokens
 	                    System.out.println(token);

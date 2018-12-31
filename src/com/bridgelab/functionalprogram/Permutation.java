@@ -19,11 +19,9 @@ public class Permutation {
 	
 	System.out.println("enter the string");
 	String ip =FunctionalUtility.StringValue();
-
+   
 	
-	System.out.println("enter the index");
-	int Index =FunctionalUtility.intValue();
 
-	FunctionalUtility.permutations(ip.toCharArray(), Index);
+	FunctionalUtility.permutations(ip.toCharArray(),0);
 }
 }

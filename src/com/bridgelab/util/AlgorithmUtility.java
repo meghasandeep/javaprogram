@@ -16,7 +16,7 @@ public class AlgorithmUtility {
 
 	public static double doubleValue()
 	{
-		return sc.nextInt();
+		return sc.nextDouble();
 	}
 
 
@@ -25,54 +25,48 @@ public class AlgorithmUtility {
 
 		return sc.next();
 	}
-
+	public static boolean booleanvalue()
+	{
+		return sc.hasNextBoolean();
+	}
 
 	//Program to check whether the given strings are anagrams or not.         
 
 	/**
 	 * @param str1 input string1
 	 * @param str2 input string2
+	 * 
 	 */
-	public static void anagram(String str1,String str2)
-	{   
-		boolean key=true;
-		if(str1.length()!=str2.length())
+	public static void isAnagram(String str1,String str2) 
+	{
+		int key=0;
+		if(str1.length()==str2.length()) 
 		{
-			key=false;
-		}
-		else {	
-			char[] char1 = str1.toLowerCase().toCharArray();
-			char[] char2 = str2.toLowerCase().toCharArray();
-			AlgorithmUtility.sortChar(char1);
-			AlgorithmUtility.sortChar(char2);
-			
-			
-			key= Arrays.equals(char1,char2);
-		}
-		if(key)
-			System.out.println("str1 and str2 not anagrams");
-		else
-			System.out.println("str1 and str2 are  anagrams");
-	}
-		public static char[] sortChar(char[] cha)
-		{
-			char[] b=new char[cha.length];
-			for(int i=0;i<cha.length;i++)
+			for(int i=0;i<str1.length();i++)
 			{
-				int count=0;
-				for(int j=0;j<cha.length;j++)
+				char s = str1.charAt(i);
+				for(int j=0;j<str2.length();j++) 
 				{
-					if(cha[i]<cha[j])
+					if(s==str2.charAt(j))
 					{
-						count++;
+						key=1;
+						break;
+					} 
+					else 
+					{
+					key=0;
+						break;
 					}
-					b[count]=cha[i];
 				}
+
 			}
-			return b;
-			
-		}
-	
+			if(key==0)
+				System.out.print("Strings are not anagram");
+			else 
+				System.out.print("Strings are anagram");
+		} 
+	}
+
 
 	//Program to print prime number in the given range
 	/**
@@ -135,12 +129,21 @@ public class AlgorithmUtility {
 	/**
 	 * @param C temperature in celcius
 	 */
-	public static void temparature(double C)
-	{
-		double F= ((C *9/5) + 32) ;
-		System.out.println(F);
+	public static double temparatureF(double C) {
+		double F = ((C * 9 / 5) + 32);
+
+		return F;
+	}
 
 
+	/**
+	 * @purpose: To convert temparature from Celsius to Fahrenheit
+	 * @param C given temparature as an input
+	 */
+	public static double temparatureC(double F) {
+		double C = ((F - 32) * 5/9);
+
+		return C;
 	}
 
 	//Program to find the monthly payment 
@@ -205,12 +208,12 @@ public class AlgorithmUtility {
 	 */
 	public  static void binarySearch(int lower,int upper,int middle,int count,String input,int n)
 	{
-		
+
 		System.out.println("Is your number:"+middle);
 		System.out.println();
 		System.out.println("Enter your answer in 'yes' or 'high' or 'low'");
 		input=AlgorithmUtility.StringValue();
-		
+
 		do
 		{
 			if (input.equals("high"))
@@ -247,7 +250,7 @@ public class AlgorithmUtility {
 			System.exit(0);
 		}
 
-}
+	}
 	//Program to sort the string using insertion sort 
 
 	/**
@@ -256,7 +259,6 @@ public class AlgorithmUtility {
 	 */
 	public static void insertion_Sort_String(String[] arr,int n) {
 
-		int i=0;
 		String temp=" ";
 		for (i=1;i<n;i++)
 		{
@@ -284,7 +286,7 @@ public class AlgorithmUtility {
 	static int i=0;
 	static int total=0;
 	static int money;
-	public static int calculate(int money,int[]notes)
+	public static  int calculate(int money,int[]notes)
 	{
 		int rem;
 		if(money==0)
@@ -299,12 +301,13 @@ public class AlgorithmUtility {
 				rem = money%notes[i];
 				money =rem;
 				total += count;
-				return count ;
+				System.out.println(notes[i]+  "rs Notes are  " +count );
 			}
 			i++;
-			return calculate(money, notes);
+			return (calculate(money, notes));
 		}
 	}
+
 	//Program to sort the intergers by using bubble sort.
 
 
@@ -529,7 +532,8 @@ public class AlgorithmUtility {
 		for (int i = 0; i < ar.size(); i++) {
 			for (int j = i + 1; j < ar.size(); j++) {
 				if (anagram(ar.get(i), ar.get(j))) {
-					System.out.println(ar.get(i) );
+					System.out.println(ar.get(i)+" "+ar.get(j));
+
 				}
 			}
 		}

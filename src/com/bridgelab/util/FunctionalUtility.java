@@ -21,7 +21,7 @@ public class FunctionalUtility <E>{
 	public static double doubleValue()
 	{
 
-		return sc.nextInt();
+		return sc.nextDouble();
 	}
 
 
@@ -31,7 +31,10 @@ public class FunctionalUtility <E>{
 		return sc.next();
 
 	}
-
+	 public static boolean booleanvalue()
+	    {
+	    	return sc.nextBoolean();
+	    }
 
 
 
@@ -71,15 +74,15 @@ public class FunctionalUtility <E>{
 	public static void flipCoin(int count)
 	{
 		//initialize head,tail,count.
-		int head=0;
-		int tail=0;
+		double head=0;
+		double tail=0;
 		int i=count;
 		Random result=new Random();
-		while(count>0)
+		while(count!=0)
 		{
-			double r=result.nextInt();
+			double r=result.nextDouble();
 			//if random number generated is equal to 0.5 increment tail value
-			if(r==0.5)
+			if(r<0.5)
 
 				tail++;
 
@@ -88,15 +91,15 @@ public class FunctionalUtility <E>{
 				head++;
 
 			count--;
-		}	      
-
+		      
+		}
 
 
 		System.out.println(head*100/i);
 		System.out.println(tail*100/i);
 	}
 
-
+	
 	//Program to check whether the entered year is leap or not.
 
 	public static void leapYear(int year)
@@ -104,7 +107,7 @@ public class FunctionalUtility <E>{
 
 
 		//leap year should be divided by both 4 and 400
-		if((year%4== 0) ||(year%400 ==0 &&year%100==0))
+		if((year%4== 0) &&(year%400 ==0 &&year%100==0))
 		{
 			System.out.println("year is leap year");
 
@@ -127,7 +130,7 @@ public class FunctionalUtility <E>{
 		if(n>=0 && n<31)
 		{
 
-			for(int i=0;i<n;i++)
+			for(int i=0;i<=n;i++)
 			{
 				System.out.println(Math.pow(2,count));
 				count++;
@@ -195,11 +198,11 @@ public class FunctionalUtility <E>{
 	{
 		//generation of random numbers
 		Random result=new Random();
-		int i=1;
+		//int i=1;
 		int win=0;
 		int loss=0;
 
-		for(i=1;i<=n;i++)
+		for(int i=0;i<n;i++)
 		{
 			int cash=stake;
 			while(cash>0 && cash<goal)
@@ -249,6 +252,7 @@ public class FunctionalUtility <E>{
 			{
 				distinct++;
 				System.out.println(distinct);
+				int c=distinct;
 				coup[content]=true;
 			}
 		}
@@ -265,7 +269,8 @@ public class FunctionalUtility <E>{
 	public static void triplet(int[] arr,int n)
 	{
 
-		boolean flag =false;
+		//boolean flag =false;
+		int count=0;
 		for(int i=0;i<n-2;i++)
 		{
 			for(int j=i+1;j<n-1;j++)
@@ -274,9 +279,9 @@ public class FunctionalUtility <E>{
 				{
 					if(arr[i]+arr[j]+arr[k]==0)
 					{
-						System.out.println("true");
-						flag=true;
-
+						System.out.print(arr[i]+" "+arr[j]+" "+arr[k]);
+						count++;
+						System.out.println();
 
 					}
 
@@ -285,10 +290,9 @@ public class FunctionalUtility <E>{
 			}
 
 		}
-		if(flag==false)
-		{
-			System.out.println("false");
-		}
+		System.out.println("total distinct triplets present in the given array is "+count);
+
+		
 	}
 	//Program to display the 2D array elements
 
@@ -401,8 +405,10 @@ public class FunctionalUtility <E>{
 		}
 	}
 	// Recursive function to generate the permutations of a String
+	static int Index=0;
 	public  static void permutations(char[]ip,int Index){
 		{
+			
 			if (Index == ip.length - 1) {
 				System.out.println(String.valueOf(ip));
 			}
@@ -410,12 +416,14 @@ public class FunctionalUtility <E>{
 			for (int i = Index; i < ip.length; i++)
 			{
 				swap(ip, Index, i);
+				
 				permutations(ip,Index + 1);
+			
 				swap(ip,Index, i);
-			}
+			
 		}
 
-
+		}
 
 	}
 	//Program to play Tic TAC Toe
