@@ -1,6 +1,5 @@
 package com.bridgelab.util;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class AlgorithmUtility {
@@ -37,37 +36,22 @@ public class AlgorithmUtility {
 	 * @param str2 input string2
 	 * 
 	 */
-	public static void isAnagram(String str1,String str2) 
-	{
-		int key=0;
-		if(str1.length()==str2.length()) 
-		{
-			for(int i=0;i<str1.length();i++)
-			{
-				char s = str1.charAt(i);
-				for(int j=0;j<str2.length();j++) 
-				{
-					if(s==str2.charAt(j))
-					{
-						key=1;
-						break;
-					} 
-					else 
-					{
-					key=0;
-						break;
-					}
-				}
-
-			}
-			if(key==0)
-				System.out.print("Strings are not anagram");
-			else 
-				System.out.print("Strings are anagram");
-		} 
-	}
-
-
+	public static boolean isAnagram(String str1, String str2) {
+        boolean isAnagram = false;
+        if (str1 != null && str2 != null && str1.length() == str2.length()) {
+            char[] arr = str1.toCharArray();
+            StringBuilder temp = new StringBuilder(str2);
+            //int wordLength = FunctionalUtility.readInteger();
+            for (char ch : arr) {
+                int index = temp.indexOf("" + ch);
+                if (index != -1) {
+                    temp.deleteCharAt(index);
+                }
+            }
+            isAnagram = temp.toString().isEmpty();
+        }
+        return isAnagram;
+    }
 	//Program to print prime number in the given range
 	/**
 	 * @param limit input range till that range we have to find the prime numbers
@@ -91,21 +75,7 @@ public class AlgorithmUtility {
 		return i;
 	}
 
-	//Program to search the string using binary search method
-
-
-	/**
-	 * @param str input string
-	 * @param key string which we want to find
-	 * @return mid
-	 */
-
-
-
-
-
-
-
+	
 	// program to find the day for the given date,month and year.
 	/**
 	 * @param m month
@@ -383,7 +353,7 @@ public class AlgorithmUtility {
 	 */
 	public static void bubble_Sort_String(String[] array) {
 		int n = array.length;
-		String temp="";
+		String temp=" ";
 		for (int i = 0; i < n-1; i++)
 			for (int j = 0; j < n-i-1; j++)
 				if ((array[j]).compareTo(array[j+1])>0)

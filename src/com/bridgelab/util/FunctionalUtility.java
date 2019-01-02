@@ -1,5 +1,8 @@
 
 package com.bridgelab.util;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import com.bridgelab.functionalprogram.*;
@@ -405,27 +408,88 @@ public class FunctionalUtility <E>{
 		}
 	}
 	// Recursive function to generate the permutations of a String
-	static int Index=0;
-	public  static void permutations(char[]ip,int Index){
+	public static List<String> recursion(String str, int initial, int last,List<String> arr) {
+
+		if (initial == last) {
+		   arr.add(str);
+		} else {
+		   for (int i = initial; i < last; i++) {
+		       str = swap(str, initial, i);
+		       recursion(str, (initial + 1), last,arr);
+		   }
+		}
+		return arr;
+		}
+
+		/**
+		* static method is used to swap the string alphabets
+		* @param str string value
+		* @param i index of string
+		* @param j index of string
+		* @return String
+		*/
+		public static String swap(String str, int i, int j) {
+		char temp;
+		char[] ch = str.toCharArray();
+		temp = ch[i];
+		ch[i] = ch[j];
+		ch[j] = temp;
+		return String.valueOf(ch);
+
+		}
+
+		/**
+		* static method is used to possible iterations we can do it for a string
+		* @param s is the string value
+		* @return arr array of string
+		*/
+		public static List<String> iteration(String str) {
+		List<String> arr = new ArrayList<>();
+		arr.add(String.valueOf(str.charAt(0)));
+		for (int i = 1; i < str.length(); i++) {
+		   for (int j = arr.size() - 1; j >= 0; j--) {
+		       String s = arr.remove(j);
+		       for (int k = 0; k <= s.length(); k++) {
+		           arr.add(s.substring(0, k) + str.charAt(i) + s.substring(k));
+		       }
+		   }
+		}
+		return arr;
+		}
+
+		/**
+		* static method is used to sort the array list
+		* @param arr is arraylist
+		* @return arraylist
+		*/
+		public static List<String> listSort(List<String> arr)
 		{
-			
-			if (Index == ip.length - 1) {
-				System.out.println(String.valueOf(ip));
-			}
-
-			for (int i = Index; i < ip.length; i++)
-			{
-				swap(ip, Index, i);
-				
-				permutations(ip,Index + 1);
-			
-				swap(ip,Index, i);
-			
+		Collections.sort(arr);
+		return arr;
 		}
 
+		/**
+		* static method is used to compare 2 array list
+		* @param arr1 array list1
+		* @param arr2 array list2
+		* @return integer value
+		*/
+		@SuppressWarnings("unused")
+		public static int comparision(List<String> arr1,List<String> arr2)
+		{
+		for(int i=0;i<arr1.size();i++)
+		{
+		   if(arr1.get(i).compareTo(arr2.get(i))==0)
+		   {
+		       return 1;
+		   }
+		   else
+		       return 0;
 		}
+		return 0;
+		}
+		
 
-	}
 	//Program to play Tic TAC Toe
 
 	static int player = 0;
@@ -465,7 +529,10 @@ public class FunctionalUtility <E>{
 		}
 		System.out.println("---------------");
 	}
-
+	/*
+	 * static void putVal(int i, int j, int player) { if if (player % 2 == 0) {
+	 * BOARD[i][j] = 0; } else BOARD[i][j] = 1; }
+	 */
 
 	public static void putVal() {
 		int i;
@@ -522,13 +589,12 @@ public class FunctionalUtility <E>{
 			}
 			player = 0;
 		}
+		
+
 	}
 
+
 }
-
-
-
-
 
 
 
