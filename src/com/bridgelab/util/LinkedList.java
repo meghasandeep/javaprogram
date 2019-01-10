@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class LinkedList {
+public class LinkedList<T> {
 
 		static Node head;
 		
@@ -14,7 +14,7 @@ public class LinkedList {
 		// Linked list Node.
 		// This inner class is made static
 		// so that main() can access it
-		static class Node {
+		static class Node{
 
 			String data;
 			Node next;
@@ -26,9 +26,10 @@ public class LinkedList {
 				next = null;
 			}
 		}
-		public static int insert(LinkedList List, String key)
+		public static int insert(LinkedList<Integer> List, String key)
 		{
 			// Create a new node with given data
+			
 			Node new_node = new Node(key);
 			new_node.next = null;
 			if (List.head == null) {
@@ -36,7 +37,8 @@ public class LinkedList {
 			}
 			else {
 				Node last = List.head;
-				while (last.next != null) {
+				while (last.next != null) 
+				{
 					last = last.next;
 				}
 				last.next = new_node;
@@ -45,7 +47,7 @@ public class LinkedList {
 			
 		}
 	
-public static int delete(LinkedList List,String key)
+public static int delete(LinkedList<Integer> List,String key)
 {
 	int flag=0;
 	Node currNode = List.head;        
@@ -64,7 +66,7 @@ public static int delete(LinkedList List,String key)
 
 	return flag;            
 }
-public static void printList(LinkedList List)
+public static void printList(LinkedList<Integer> List)
 {
 	Node currNode = List.head;
 	System.out.print("LinkedList: ");
@@ -76,7 +78,7 @@ public static void printList(LinkedList List)
 	}
 }
 
-public static void usingFileWriter(LinkedList list,String[] fileContent,String path) throws IOException
+public static void usingFileWriter(LinkedList<Integer> list,String[] fileContent,String path) throws IOException
 {
 	//String[] fileContent = DataStructureUtility.toStrinConv(list);
 	FileWriter fileWriter = new FileWriter(path);    
@@ -88,6 +90,13 @@ public static void usingFileWriter(LinkedList list,String[] fileContent,String p
 		}
 	}
 	fileWriter.close();
+}
+private static int size;
+public int size() {
+	return size;
+}
+public static boolean isEmpty() {
+	return size==0;
 }
 public static void dispFile( String fName)
 {
@@ -107,7 +116,9 @@ public static void dispFile( String fName)
 		System.out.println("Error reading file named '" + fName + "'");
 	}
 }
-public static LinkedList readFile(LinkedList list) throws IOException
+
+
+public static LinkedList readFile(LinkedList<Integer> list) throws IOException
 {
 	System.out.println("Enter the path of the file");
 	String txtFile = FunctionalUtility.StringValue();
@@ -119,7 +130,8 @@ public static LinkedList readFile(LinkedList list) throws IOException
 		while ((line = br.readLine()) != null)
 		{
 			name = line.split(" ");
-			for(int i=0;i<name.length;i++){
+			for(int i=0;i<name.length;i++)
+			{
 				String name1=name[i];
 				LinkedList.insert(list,name1);
 			}

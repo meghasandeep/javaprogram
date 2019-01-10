@@ -3,33 +3,8 @@ package com.bridgelab.util;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class Queue {
-	static Scanner sc = new Scanner(System.in);
-
-	public static int intValue()
-	{
-
-		return sc.nextInt();
-	}
-
-
-	public static double doubleValue()
-	{
-
-		return sc.nextDouble();
-	}
-
-
-	public static String StringValue()
-	{
-
-		return sc.next();
-
-	}
-	 public static boolean booleanvalue()
-	    {
-	    	return sc.nextBoolean();
-	    }
+public class Queue<T>{
+	
 
 	  protected int Queue[],front,rear,size,len;
 

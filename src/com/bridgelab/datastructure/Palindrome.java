@@ -2,47 +2,58 @@ package com.bridgelab.datastructure;
 
 import java.util.Scanner;
 
-import com.bridgelab.util.DequeueUtility;
+import com.bridgelab.util.DequeImpl;
 
 public class Palindrome {
 	public static void main(String[] args) 
+
 	{
-		int t=0;
-		do{
-		Scanner sc=new Scanner(System.in);
+		DequeImpl f=new DequeImpl();
 	
-		DequeueUtility<Character> utility=new DequeueUtility<Character>();
-		System.out.println("Enter a String To Check Whether It is Pallindrome or Not : ");
-		String s=sc.nextLine();
+			Scanner sc=new Scanner(System.in);
 
-		//adding each character to the rear of the dequeue
-		for(int i=0;i<s.length();i++)
-		{
-			char c =s.charAt(i);
-			utility.addRear(c);
-		}
-		int flag=0;
+			System.out.println("Enter a String To Check Whether It is Pallindrome or Not : ");
+			String s=sc.nextLine();
 
-		while(utility.size()>1)
-		{
-			if(utility.removeFront()!=utility.removeRear())
+			//adding each character to the rear of the dequeue
+			for(int i=0;i<s.length();i++)
 			{
-				flag=1;
-				break;
+				char c =s.charAt(i);
 			}
-		}
+			boolean flag=true;
 
-		if(flag==0)
-		{
-			System.out.println("The Entered String is a Pallindrome");
-		}
-		else
-		{
-			System.out.println("The Entered String is not a Pallindrome");
-		}
-	}while(t<10);
+			while(f.size()>1)
+			{
+				System.out.println("mmm");
+				for(int i=0;i<s.length();i++)
+				{
+					char d =s.charAt(i);
+					System.out.println(d);
+				
+				  Object first = f.removeFront(d);
+				  System.out.println(d);
+				  Object last = f.removeRear(d);
+				if(first!=last)
+				{
+					flag=false;
+					break;
+				}
+
+			}
+			}
+				if(flag)
+				{
+					System.out.println("The Entered String is not a Pallindrome");
+				}
+				else
+				{
+					System.out.println("The Entered String is not a Pallindrome");
+				}
+			}
+
 	}
-}
+	
 
 
+	
 

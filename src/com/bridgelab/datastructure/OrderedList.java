@@ -33,7 +33,7 @@ public class OrderedList {
 	            if(k==0) {
 	            	LinkedList.insert(List, key1);
 	            }
-	            System.out.println("your here");
+	           // System.out.println("your here");
 
 	            int[] fileContent = LinkedList.toIntConv(List); 
 	            String[] fileContent1 = LinkedList.toStrinConv(List);
@@ -41,7 +41,8 @@ public class OrderedList {
 	            String[] sarray=new String[arr.length];
 	            int[] arry = LinkedList.toIntConv(List);
 	            for(int i=0;i<arr.length;i++) {
-	                if(arr[i]!=0) {
+	                if(arr[i]!=0) 
+	                {
 	                     sarray[i]=String.valueOf(arr[i]);
 	                    i++;
 	                }

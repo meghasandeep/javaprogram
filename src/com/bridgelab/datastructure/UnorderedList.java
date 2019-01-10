@@ -24,7 +24,7 @@ public class UnorderedList {
 	            break;
 	            case 2:System.out.println("Enter the key element to be searched");
 	            String key=FunctionalUtility.StringValue();
-	            int k=LinkedList.delete(List, key);
+	            int k=LinkedList.delete(List,key);
 	            System.out.println(k);
 	            if(k==0) {
 	            	LinkedList.insert(List, key);

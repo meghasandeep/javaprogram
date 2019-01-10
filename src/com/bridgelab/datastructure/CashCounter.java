@@ -1,13 +1,13 @@
 package com.bridgelab.datastructure;
 
-import com.bridgelab.util.FunctionalUtility;
+import com.bridgelab.util.AlgorithmUtility;
 import com.bridgelab.util.Queue;
-import com.bridgelab.util.Stack;
+import com.bridgelab.util.StackImpl;
 
 public class CashCounter {
 
 	public static void main(String[] args) {
-		Stack q= new Stack();
+		StackImpl q= new StackImpl();
 	        
 //        int n=DataStructureUtility.readInteger();
         Queue q1=new Queue(100);
@@ -21,25 +21,25 @@ public class CashCounter {
                System.out.println("3.Exit");
               
                System.out.println("Enter your choice: ");
-               int choice=q.intValue();
+               int choice=AlgorithmUtility.intValue();
                switch (choice)
                {
                case 1: q1.insert(ch++);
                        System.out.println("person added to queue");
                        System.out.println("select choice 1.deposit 2.withdraw");
-                       int value=q.intValue();
+                       int value=AlgorithmUtility.intValue();
                     switch (value)
                     {
                case 1:           
                        System.out.println("Enter the amount you want to Deposit");
-                       int cash=Stack.intValue();
+                       int cash=AlgorithmUtility.intValue();
                        money+=cash;
 //                       System.out.println("available balance is: "+(money+cash));
                        System.out.println("amount credited to your account");
                        break;
                case 2:
                        System.out.println("Enter the amount you want to Withdraw ");
-                    int cash1=Stack.intValue();
+                    int cash1=AlgorithmUtility.intValue();
                     money=money-cash1;
                     System.out.println("amount debited from your account");
 //                       System.out.println(" Your Available Balance is: "+money);
